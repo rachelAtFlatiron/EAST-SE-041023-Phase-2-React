@@ -4,10 +4,27 @@ title: "01_components_props"
 
 ---
 
+### SWBATs:
+
+- [ ] Review the benefits of React over Vanilla JS
+- [ ] Explain the difference between HTML and JSX 
+- [ ] Explain the ReactDOM.render() method including what arguments it takes and why it's important
+<br /><br />
+- [ ] Explain the difference between declarative and imperative programming
+- [ ] Review the importance of components and modular code
+- [ ] Explain what props are and how to create them
+- [ ] Recognize best practices when writing components and props
+<br /><br />
+- [ ] Review how a component is written
+- [ ] Recognize destructured props and how to work with them
+- [ ] Observe how to render multiple components from a list
+
+---
+
 ## ✅ Objectives 
 
 - Discuss the benefits of React over Vanilla JS
-- Explain the importance of Components
+- Explain the importance of components
 - Practice writing components
 - Define props and how to create them
 - Recognize destructured props and how to work with them
@@ -27,7 +44,7 @@ Writing vanilla JavaScript is hard especially when it comes to
 ## 💡 React Philosophy 
 
 - Use declarative syntax (JSX)
-- Makes it easier to work with the DOM
+- Make it easier to work with the DOM
 
 ---
 
@@ -102,22 +119,25 @@ NOTE: ReactDOM.render only works with React up to version 17.  We will be using 
 
 ---
 
+## Virtual DOM
+
+- React creates a virtual representation of the UI that is saved in memory
+- ReactDOM is responsible for making sure the real DOM matches the virtual DOM
+- This process abstracts out the manual updating, element creation, etc. from phase 1
+
+---
+
 ## 🚗 React Roadmap
 
 The goals for Phase 2: 
 
 - Create a static frontend site with components and props (DOM Manipulation)
-
 - Use state and events to make your site dynamic (Event Handling)
-
 - Add side effects and data fetching to communicate with a server (Network Communication)
 
 ---
 
 ## Components 
-
-<p>
-
 Components are the building blocks of React. A component is a function that:
 
 - Takes in some raw data (props)
@@ -136,14 +156,6 @@ const Header = () => {
 
 ReactDOM.render(<Header />, document.getElementById("root"));
 ```
-
----
-
-## Modular Coding 
-
-- Clearer connection between the code we write and what is displayed in the browser
-- Use components to break down complex UI into smaller pieces which creates a better separation of concerns
-- Easier to maintain
 
 ---
 
@@ -222,6 +234,15 @@ function Card(props) {
   );
 }
 ```
+
+---
+
+
+## Modular Coding 
+
+- Clearer connection between the code we write and what is displayed in the browser
+- Use components to break down complex UI into smaller pieces which creates a better separation of concerns
+- Easier to maintain
 
 ---
 

@@ -65,55 +65,6 @@
 
   - Dynamically render each project's about data inside the `p` tag
 
-*** 
-
-### Components
-
-Components are the building blocks of React. A component is a function that:
-
-- Takes in some raw data (props)
-- Returns user interface (JSX)
-
-There are some things you'll need to keep in mind:
-
-- The name of your component function must be capitalized. This will not work
-- A component can only return one element. That element can have children, like this:
-
-```js
-function Card() {
-  return (
-    <div id="card1" className="card">
-      <h1>hi</h1>
-      <p>wassup?</p>
-    </div>
-  );
-}
-```
-
-### Props
-
-When you create components, one way to make them dynamic and reusable is by passing in props. For example, if we wanted to create several cards on our page using a Card component, we could do so like this:
-
-```js
-function Card(props) {
-  return (
-    <div id="card1" className="card">
-      <h1>{props.greeting}</h1>
-      <p>{props.subGreeting}</p>
-    </div>
-  );
-}
-
-ReactDOM.render(
-  <div>
-    <Card greeting="hi" subGreeting="hello" />
-    <Card greeting="sup" subGreeting="what's up" />
-  </div>,
-  document.getElementById("root")
-);
-```
-
-The props argument in our Card component defines an object that React will pass to our function when it is called, and it will use whatever attributes we add to our JSX component as key-value pairs on that props object.
 
 ### Resources
 
