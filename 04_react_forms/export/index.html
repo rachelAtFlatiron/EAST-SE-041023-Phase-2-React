@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>04_react_forms</title>
+
+  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+  <meta name="author" content="Hakim El Hattab">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="libs/reveal.js/4.3.1/reset.css">
+  <link rel="stylesheet" href="libs/reveal.js/4.3.1/reveal.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!-- highlight Theme -->
+  
+  <link rel="stylesheet" href="libs/highlight.js/11.3.1/styles/monokai.min.css">
+  
+	
+		
+	<link rel="stylesheet" href="libs/reveal.js/4.3.1/plugin/chalkboard/style.css">
+	
+	
+	
+  <link rel="stylesheet" href="libs/reveal.js/4.3.1/plugin/customcontrols/style.css">
+  
+	
+
+
+
+  <!-- Revealjs Theme -->
+  
+  <link rel="stylesheet" href="libs/reveal.js/4.3.1/theme/black.css" id="theme">
+  
+  
+
+  <link rel="stylesheet" href="libs/styles/tasklist.css">
+	<link rel="stylesheet" href="libs/styles/iota.css">
+	<link rel="stylesheet" href="libs/styles/layout.css">
+
+
+  <!-- Revealjs Theme -->
+  
+
+   <!-- css list -->
+	
+
+   
+
+</head>
+
+<body>
+
+   
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      
+
+
+    
+        <section >
+            
+            <h2>React Forms 📝</h2>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>✅ Objectives</h2>
+<ul>
+<li>What is the difference between a controlled and uncontrolled input</li>
+<li>Explain why we use controlled forms (vs uncontrolled forms)</li>
+<li>Review how to use callback functions with events in React</li>
+<li>Review how to change parent state from a child component</li>
+<li>Implement a controlled form</li>
+<li>Use form data to update state in a parent component</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>What is a controlled input</h2>
+<p>In React, rather than looking into the DOM to get the form’s input field values when the form is submitted, we use state to monitor the user’s input as they type, so that our component state is always in sync with the DOM.</p>
+<center><img src="https://res.cloudinary.com/dnocv6uwb/image/upload/v1646072384/controlled-forms_j69gpu.svg" alt="controlled input diagram" height="500" width="1000"></center>
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Making an input controlled</h2>
+<p>To keep track of each input’s value, you need:</p>
+<ol>
+<li>
+<p>State for the input that will manage the input’s value</p>
+</li>
+<li>
+<p>An <code>onChange</code> listener attached to the input to monitor users behavior and update state as the user interacts with the field</p>
+</li>
+<li>
+<p>A <code>value</code> attribute on the input that corresponds to a key in state</p>
+</li>
+</ol>
+<p>And for the form itself, you need an <code>onSubmit</code> listener on the form to finally submit data.</p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>🛠️ ProjectForm setup</h2>
+<ol>
+<li>For each input element in the form, create a new state variable:</li>
+</ol>
+<pre><code class="language-js">const [name, setName] = useState(&quot;&quot;);
+const [about, setAbout] = useState(&quot;&quot;);
+const [phase, setPhase] = useState(&quot;&quot;);
+const [link, setLink] = useState(&quot;&quot;);
+const [image, setImage] = useState(&quot;&quot;);
+</code></pre>
+<p>❗ Most common approach (and cleanest) is to create a state object with key/value pairs associated with each form field:</p>
+<pre><code class="language-js">const [formData, setFormData] = useState({
+  name: &quot;&quot;,
+  about: &quot;&quot;,
+  phase: &quot;&quot;,
+  link: &quot;&quot;,
+  image: &quot;&quot;,
+});
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <ol start="2">
+<li>Add an onChange handler for each input field using a helper function:</li>
+</ol>
+<p>Example:</p>
+<pre><code class="language-js">&lt;input type=&quot;text&quot; id=&quot;about&quot; onChange={handleOnChange} /&gt;
+</code></pre>
+<p>🤯 If using individual pieces of state for form fields, a separate helper function will be created for each corresponding field.</p>
+<p>Example:</p>
+<pre><code class="language-js">&lt;input type=&quot;text&quot; id=&quot;about&quot; onChange={handleAbout} /&gt;
+</code></pre>
+<pre><code class="language-js">&lt;input type=&quot;text&quot; id=&quot;phase&quot; onChange={handlePhase} /&gt;
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <ol start="3">
+<li>Connect the <code>value</code> attribute of each input field to the corresponding state variable:</li>
+</ol>
+<p>Example:</p>
+<pre><code class="language-js">&lt;input
+  type=&quot;text&quot;
+  id=&quot;about&quot;
+  onChange={handleOnChange}
+  value={formData.about}
+/&gt;
+</code></pre>
+<p>❗<strong>Note:</strong> The reason <code>formData.name</code> is being used is because the state variable is an object named <code>formData</code>. To access the value of a key within the object, dot notation is used.</p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <ol start="4">
+<li>Adding a <code>name</code> attribute to the input fields:</li>
+</ol>
+<pre><code class="language-js">&lt;input
+  type=&quot;text&quot;
+  id=&quot;about&quot;
+  onChange={handleOnChange}
+  value={formData.about}
+  name=&quot;about&quot;
+/&gt;
+</code></pre>
+<p>❗ <strong>IMPORTANT: </strong> The <code>name</code> attribute needs to match with the key created in the state object in order to update the value. If the key in the state object is ‘about’ then the <code>name</code> attribute for the corresponding input field should be <code>about</code> as well</p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <ol start="5">
+<li>Updating the state when the onChange occurs (aka when the user begins typing or changing parts of the form):</li>
+</ol>
+<pre><code class="language-js">const handleOnChange = (e) =&gt; {
+  // e.target will return an object, the element that triggered the event with properties
+  // including name and value. Object destructuring is used to extract that values from e.target
+
+  // This is the same as doing:
+  // const name = e.target.name
+  // const value = e.target.value
+
+  const { name, value } = e.target;
+
+  // The setter function is then invoked and a new object will  be created with the 
+  // contents of the previous formData spread and the new key/value added to avoid overwriting the 
+  // previous form field values
+
+  setFormData((formData) =&gt; ({ ...formData, [name]: value }));
+};
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <ol start="6">
+<li>On the <code>&lt;form&gt;</code> element, add an <code>onSubmit</code> listener with a <code>handleSubmit</code> helper function that will run when the form is submitted:</li>
+</ol>
+<pre><code class="language-js">&lt;form className=&quot;form&quot; autoComplete=&quot;off&quot; onSubmit={handleSubmit}&gt;&lt;/form&gt;
+</code></pre>
+<pre><code class="language-js">const handleSubmit = (e) =&gt; {
+  e.preventDefault();
+};
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>🔑 After the form has been submitted</h2>
+<p>The state of <code>projects</code> is defined inside of the parent component <code>App</code> and the behavior occurs in the child component <code>ProjectForm</code>. When the new project is submitted, <code>projects</code> will need to be updated to include it.</p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <p>Here is where the process of inverse data flow will need to occur:</p>
+<ol>
+<li>Create a helper function in <code>App</code> component called <code>onAddProject</code> that will update the <code>projects</code> state:</li>
+</ol>
+<pre><code class="language-js">const onAddProject = (newProject) =&gt; {
+  setProjects([...projects, newProject]);
+};
+</code></pre>
+<p><code>projects</code> is an array so to update the state, a new array will be created with the elements of the original <code>projects</code> array spread and the new project passed to <code>onAddProject</code> added as a new element</p>
+<p>Pass <code>onAddProject</code> as a prop to <code>ProjectFrom</code> from within <code>App</code> component:</p>
+<pre><code class="language-js">&lt;ProjectForm onAddProject={onAddProject} /&gt;
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <p>Inside the <code>ProjectForm</code> component, destructure <code>onAddProject</code> from the props and invoke it from within the <code>handleSubmit</code> function, passing it the formData object:</p>
+<pre><code class="language-js">const handleSubmit = (e) =&gt; {
+  e.preventDefault();
+  onAddProject(formData);
+
+  // after we have delivered the formData to the App component and updated state
+  // clear the form by setting the values back to empty strings:
+
+  setFormData({
+    name: &quot;&quot;,
+    about: &quot;&quot;,
+    phase: &quot;&quot;,
+    link: &quot;&quot;,
+    image: &quot;&quot;,
+  });
+};
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>💡 Conclusion</h2>
+<p>State is an integral part of the way that React applications operate and allows DOM manipulation to occur. React prefers using state to update the forms and keep track of the form fields values, making them controlled inputs. What our user sees in the input fields reflects the value of the state associated with that field.</p>
+
+            </section>
+    
+
+
+    </div>
+
+
+  </div>
+
+  <div class="line top"></div>
+  <div class="line bottom"></div>
+  <div class="line left"></div>
+  <div class="line right"></div>
+
+  <script src="libs/reveal.js/4.3.1/reveal.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/notes/notes.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/markdown/markdown.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/highlight/highlight.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/math/math.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/fullscreen/plugin.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/animate/plugin.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/animate/svg.min.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/plugin.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/Chart.min.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/d3/d3.v3.min.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/d3.patch.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/d3/queue.v1.min.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/d3/topojson.v1.min.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/function-plot.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/customcontrols/plugin.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/embed-tweet/plugin.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/chart/chart.min.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/chart/plugin.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/verticator/verticator.js"></script>
+
+<script src="libs/reveal.js/4.3.1/plugin/zoom/zoom.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/search/search.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/menu/menu.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/chalkboard/plugin.js"></script>
+
+<!--	<script src="libs/reveal.js/4.3.1/plugin/audio-slideshow/plugin.js"></script>  -->
+<!--	<script src="libs/reveal.js/4.3.1/plugin/audio-slideshow/recorder.js"></script>-->
+<!--	<script src="libs/reveal.js/4.3.1/plugin/audio-slideshow/RecordRTC.js"></script>-->
+
+  
+
+<script>
+  const printPlugins = [
+      RevealNotes,
+      RevealHighlight,
+      RevealMath.MathJax3,
+      RevealAnimate,
+      RevealChalkboard, 
+			RevealEmbedTweet,
+			RevealChart,
+		];
+
+		const plugins =  [...printPlugins,
+		RevealZoom, 
+		RevealSearch, 
+				RevealMarkdown, 
+				RevealMenu, 
+				RevealFullscreen,
+				RevealAnything,
+				//RevealAudioSlideshow,
+				//RevealAudioRecorder,
+				RevealCustomControls, 
+				// poll
+				// question
+				// seminar
+				Verticator 
+				 ]
+
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			controls: true,
+      controlsTutorial: true,
+      controlsLayout: 'bottom-right',
+      controlsBackArrows: 'faded',
+      progress: true,
+      slideNumber: false,
+      //#showSlideNumber "all" "print" "speaker"
+      hash: true, //# hash: false,
+      //# respondToHashChanges: true,
+      //# history: false,
+      keyboard: true,
+      //#keyboardCondition: null,
+      overview: true,
+      center: true,
+      touch: false,
+      loop: false,
+      rtl: false,
+      //#navigationMode: 'default', linear grid
+      shuffle: false,
+      fragments: true,
+      fragmentInURL: false,
+      embedded: false,
+      help: true,
+      //#pause: true
+      showNotes: false,
+      autoPlayMedia: false, // TODO fix this to a nullable value
+      //#preloadIframes: null. true false
+      //#autoAnimate: true
+      //#autoAnimateMatcher: null,
+      //#autoAnimateEasing: 'ease',
+      //autoAnimateDuration: 1.0,
+      //#autoAnimateUnmatched: true
+      //#autoAnimateStyles: []
+      autoSlide: 0, // TODO fix this to a falseable value
+      autoSlideStoppable: true,
+      autoSlideMethod: '0',
+      defaultTiming: 120,
+      mouseWheel: false,
+      //#previewLinks: false
+      //#postMessage: true, // TODO : this can cause issues with the vscode api ???
+      //#postMessageEvents: false,
+      //#focusBodyOnPageVisibilityChange: true,
+      transition: 'slide',
+      transitionSpeed: 'default',
+      backgroundTransition: 'fade',
+      //#pdfMaxPagesPerSlide: Number.POSITIVE_INFINITY,
+      //#pdfSeparateFragments: true,
+      //#pdfPageHeightOffset: -1,
+      viewDistance: 3,
+      //#mobileViewDistance: 2,
+      display: 'block',
+      //#hideInactiveCursor: true,
+      //#hideCursorTime: 5000
+
+      // Parallax Background
+      parallaxBackgroundImage: '',
+      parallaxBackgroundSize: '',
+      parallaxBackgroundHorizontal: 0,
+      parallaxBackgroundVertical: 0,
+
+      //Presentation Size
+      width: 960,
+			height: 700,
+			margin: 0.04,
+      minScale: 0.2,
+      maxScale: 2,
+      disableLayout: false,
+
+      audio: {
+        prefix: 'audio/', // audio files are stored in the "audio" folder
+        suffix: '.ogg', // audio files have the ".ogg" ending
+        textToSpeechURL: null, // the URL to the text to speech converter
+        defaultNotes: false, // use slide notes as default for the text to speech converter
+        defaultText: false, // use slide text as default for the text to speech converter
+        advance: 0, // advance to next slide after given time in milliseconds after audio has played, use negative value to not advance
+        autoplay: false, // automatically start slideshow
+        defaultDuration: 5, // default duration in seconds if no audio is available
+        defaultAudios: true, // try to play audios with names such as audio/1.2.ogg
+        playerOpacity: 0.05, // opacity value of audio player if unfocused
+        playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls
+        startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+      },
+      
+      chalkboard: { // font-awesome.min.css must be available
+        //src: "chalkboard/chalkboard.json",
+        storage: "chalkboard-demo",
+      },
+      
+			customcontrols: {
+					controls: [
+      						{
+						  id: 'toggle-overview',
+						  title: 'Toggle overview (O)',
+						  icon: '<i class="fa fa-th"></i>',
+						  action: 'Reveal.toggleOverview();'
+						}
+						,
+      {
+        icon: '<i class="fa fa-pen-square"></i>',
+        title: 'Toggle chalkboard (B)',
+        action: 'RevealChalkboard.toggleChalkboard();'
+      },
+      {
+        icon: '<i class="fa fa-pen"></i>',
+        title: 'Toggle notes canvas (C)',
+        action: 'RevealChalkboard.toggleNotesCanvas();'
+      }
+      
+				]
+			},
+			chart: {
+					defaults: { 
+						color: 'lightgray', // color of labels
+						scale: { 
+							beginAtZero: true, 
+							ticks: { stepSize: 1 },
+							grid: { color: "lightgray" } , // color of grid lines
+						},
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] }, 
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+			},
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+				anything: [ 
+				{
+		className: "plot",
+		defaults: {width:500, height: 500, grid:true},
+		initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) })
+	 },
+	 {
+		className: "chart",  
+		initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  })
+	 },
+	 {
+		className: "anything",
+		initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} })
+	 },
+					],
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: (window.location.search.match(/print-pdf/gi) ? printPlugins : plugins ) 
+		});
+			
+
+
+	    // Change chalkboard theme : 
+		function changeTheme(input) {
+			var config = {};
+			config.theme = input.value;
+			Reveal.getPlugin("RevealChalkboard").configure(config);
+			input.blur();
+		}
+
+		// // Handle the message inside the webview
+        // window.addEventListener('message', event => {
+
+        //     const message = event.data; // The JSON data our extension sent
+
+        //     switch (message.command) {
+        //         case 'refactor':
+        //             Reveal.toggleHelp();
+        //     }
+        // });
+
+		if (window.location.search.match(/print-pdf-now/gi)) {
+      		setTimeout(() => {
+				window.print();
+			  }, 2500);
+			
+    }
+</script>
+
+</body>
+
+</html>
