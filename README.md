@@ -17,6 +17,7 @@
 | 6. PATCH & DELETE  | Notes | Video | Starter | Solution |
 | 7. Client-Side Routing  | Notes | Video | Starter | Solution |
 
+***
 ## 1: Components and Props
 ### SWBATs:
 - [ ] Review the benefits of React over Vanilla JS
@@ -38,43 +39,59 @@
 - Props
 - Destructuring
 
-
+***
 ## 2: State & Events
 
 ### SWBATs:
-- Explain the importance of state
-- Explain the difference between state and props
-- Observe how to use the useState hook
-- Observe how to use DOM events in React
+
+- [ ] Understand how to create events in React
+- [ ] Review event handler functions, a type of callback function
+<br /><br />
+- [ ] Explain the importance of state
+- [ ] Explain the difference between state and props
+- [ ] Discuss some "gotchas" of working with useState: async code and closures
+<br /><br />
+- [ ] Observe how to use the useState hook
+- [ ] Observe how to use DOM events in React
+- [ ] Create event handler callbacks that manipulate state
+- [ ] Trigger re-renders by setting state
+
 ### Lecture Topics:
 - Creating & Updating State
 - Events
 - Callbacks
 - useState
 
-
+***
 ## 3: Information Flow
 ### SWBATs:
-- Define the term “lifting state”
-- Recognize the pattern for changing state in a parent component from a child component
-- Explain the role that callback functions play in changing parent state
-- Observe how we can render reusable components that invoke different callback functions after an event
-- Recognize destructured props and how to work with them
+
+- [ ] Define the term “lifting state”
+- [ ] Recognize the pattern for changing state in a parent component from a child component
+- [ ] Explain the role that callback functions play in changing parent state
+- [ ] Observe how we can render reusable components that invokes different callback functions after an event
+- [ ] Recognize destructured props and how to work with them
+
 ### Lecture Topics:
 - Callback functions as props
 - Changing parent state
 - Reusing components w/ different behaviors
 
-## 4: Forms
+***
+## 4. React Forms
+
 ### SWBATs:
-- Explain the difference between a controlled and uncontrolled input
-- Explain why controlled inputs are preferred by the React community
-- Review how to use callback functions with events in React
-- Review how to change parent state from a child component
+
+- [ ] Explain the difference between a controlled and uncontrolled input
+- [ ] Explain why controlled inputs are preferred by the React community
+- [ ] Review how to use callback functions with events in React
+- [ ] Review how to change parent state from a child component
 ### Lecture Topics:
 - Controlled vs uncontrolled inputs
 - Forms
 
+
+***
 ## 5: Side Effects & Data Fetching
 
 ### SWBATs:
@@ -88,6 +105,7 @@
 - Dependency array
 - fetch => GET & POST
 
+***
 ## 6: PATCH & DELETE
 ### SWBATs:
 - Observe how to send a PATCH & DELETE request
@@ -95,6 +113,7 @@
 ### Lecture Topics:
 - fetch => PATCH & DELETE
 
+***
 ## 7: Client Side Routing
 
 ### SWBATs:

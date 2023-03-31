@@ -1,7 +1,9 @@
 # State and Events
+## SWBATs:
 
-### SWBATs:
-
+- [ ] Understand how to create events in React
+- [ ] Review event handler functions, a type of callback function
+<br /><br />
 - [ ] Explain the importance of state
 - [ ] Explain the difference between state and props
 - [ ] Discuss some "gotchas" of working with useState: async code and closures
@@ -11,121 +13,166 @@
 - [ ] Create event handler callbacks that manipulate state
 - [ ] Trigger re-renders by setting state
 
-*** 
+---
 
-### Deliverables
-
-#### 1. Add a click event to the 'Dark Mode' button inside the `Header` component:
-
-- Initialize state `isDarkMode` to true
-
-- Define a function 'handleClick' that will toggle and update the `isDarkMode` state
-
-- Attach a 'click' event to the button that invokes the callback function `handleClick`
-
-#### 2. Add a click event to the clap button inside the `ProjectListItem` component:
-
-- Initialize state `clapCounts` set to 0
-
-- Create a function `handleClap` that will increment and update the `clapCounts` state by 1
-
-- Attach a 'click' event to the clap button that invokes the callback function `handleClap`
-
-#### 3. Implement a Filter by project name feature inside the `ProjectList` component:
-
-- Initialize state `searchQuery` set to an empty string
-
-- Add an `onChange` event to the search input field
-
-- When the `onChange` event occurs, update the `searchQuery` state to the value in the input field
-
-- Given the array of `projects`, filter the projects that include the value of the search query
-
-*** 
-
-### Events
-
-In React, we add event handlers directly to our JSX. We still must supply the event handler with a callback. For example, if we're trying to implement a click handler on a button, we could do so by passing a callback function to the onClick attribute of an element:
+## Events in JS
 
 ```js
-function Counter() {
+// 1. Find an element in the DOM:
+const pizza = document.getElementById("pizza");
+// 2. Add an event listener to that element
+pizza.addEventListener;
+// 3. Give type and callback to the event listener:
+pizza.addEventListener("click", () => {
+  console.log("It's Pizza Time!");
+});
+```
+In React we can skip directly to step 2 by adding the event listener and handler (as a callback function) to our JSX 
+
+---
+
+##  Events in React 
+
+```js
+const Counter = () => {
   return <button onClick={() => console.log("clicked!")}>Click Me</button>;
-}
+};
 ```
 
-Events can only be attached to DOM elements, we can't attach event listeners to our components
+NOTE: Events can only be attached to JSX elements.  There is no equivalent of 'addEventListener' and you cannot query for a JSX element. 
 
-We can also create a helper function for the callback:
+---
+
+## Defining Event Handlers
+
+Event handler functions (passed as a callback function) are often defined as helper functions outside of your JSX.
 
 ```js
-function Counter() {
+//functional component definition
+const Counter = () => {
+  //helper function
   function handleClick(event) {
     console.log(event);
   }
 
-  return <button onClick={handleClick}>Click Me</button>;
-}
+  //JSX - helper function passed into onClick event
+  return (
+    <button onClick={handleClick}>Click Me</button>
+  );
+};
 ```
 
-This is helpful in the case where we need to introduce additional event handling logic. We can do so without cluttering our JSX
+This is helpful in the case where we need to introduce additional event handling logic. We can do so without cluttering our JSX.
 
-Rather than working with the native event object in the browser, React passes a Synthetic Event object to our event handlers. Synthetic events ensure that you can use the event object in the same way regardless of browser or machine. This comes back to the learn once, write anywhere principle.
+---
 
-Otherwise, events are more or less the same as they are in vanilla JS. With one notable exception being onChange which in React behaves identically to the onInput event
+## Synthetic Events
 
-***
+- React passes "synthetic event objects" to our event handlers rather than the native event object created by the browser.
+- Synthetic events ensure that you can use the event object in the same way regardless of browser or machine.
 
-### State
+---
 
-State is used for data that needs to be dynamic. Where props are passed down from parents to children and are static, values stored in state are meant to change, especially as the user interacts with the DOM.
+## Demo
 
-This is a key component of declarative programming in React: we tie our components to our state by integrating values in state into logic (e.g. conditional rendering). This way, changes in state eventually cause changes to the DOM.
+---
 
-To work with state in a function component, we use the `useState` hook:
+## Why is state important?
 
-```js
-import React, { useState } from "react";
+🏹 State is used to track information that changes over time. 
 
-function Counter() {
-  const [count, setCount] = useState(0);
+🏹 Props are passed from the parent component, state is internal to a component. 
 
-  return <button>Count: {count}</button>;
-}
-```
+🏹 Values stored in state are meant to change, especially in response to user behaviors (through events and interactions).
 
-When we call `useState(0)` inside the function component, that creates a new "state variable" which our function gets access to. That new state variable has an initial value of 0 (or whatever we pass into useState when we call it)
+🏹 We can do conditional rendering based on state values. Based on state we can determine what JSX or logic to execute. This way, changes in state eventually cause changes to the DOM.
+
+---
+
+## React Flow
+
+<img src="https://www.exploringreact.com/wp-content/uploads/2020/11/unidirectional.png" />
+🏹 To work with state in a functional component, we use the `useState` hook
+
+---
+
+## useState()
 
 `useState` will return an array of two elements:
 
-- count: the current value for the state variable
-- setCount: a setter function to update the state variable
+- state variable: returns the initial value for the state
 
-To update a state variable, we use its setter function:
+- setter function: a function that will update the value of the state when invoked
+
+React recommends using array destructuring:
 
 ```js
-import React, { useState } from "react";
-
-function Counter() {
-  const [count, setCount] = useState(0);
-
-  function handleClick() {
-    setCount(count + 1);
-  }
-
-  return <button onClick={handleClick}>Count: {count}</button>;
-}
+const [stateVariable, setterFunc] = useState(someVal);
 ```
 
+---
+
+## Setting State
+
+- To update a state variable, we use its setter function:
+
+```js
+setterFunc("newValue")
+```
 Calling the setter function does two things:
 
-- It updates the state variable to some new value
-- It causes our component to re-render and update the DOM
+1. It updates the state variable to some new value
 
-***
+2. It causes our component to re-render and update the DOM
 
-### Resources
+---
 
-- [React Docs - Events](https://reactjs.org/docs/events.html)
-- [React Docs - Hooks](https://reactjs.org/docs/hooks-overview.html)
-- [React Docs - Functional State Updates](https://reactjs.org/docs/hooks-reference.html#functional-updates)
-- [React Docs - Stale State Problem](https://reactjs.org/docs/hooks-faq.html#why-am-i-seeing-stale-props-or-state-inside-my-function)
+## Setting State Gotcha's
+
+setState is async and are "batched for performance gains", therefore....
+
+---
+
+## 🛑 DO NOT PASS DOWN SETSTATE AS A PROP
+
+Always wrap it in a callback function and pass the callback function as a prop instead
+
+```js
+const myCallback = () => setterFunc("newValue");
+```
+
+---
+
+## 🛑 DO NOT DIRECTLY UPDATE STATE
+
+```js
+setterVariable = "newValue" //BAD
+setterFunc(setterVariable) //BAD
+
+//GOOD
+setterFunc(prevSetterVariable => prevSetterVariable + "new string") 
+//in the case of arrays use destructuring to create a new array
+//instead of directly mutating original array
+setterFuncForArray(prevArrayVariable => [...prevArrayVariable, newValue])
+```
+
+---
+
+## 🛑 YOUR COMPONENTS' LOGIC WILL RUN WITH THE INITIAL STATE
+
+- If your state is meant to be an array, I recommend initializing it with an empty array
+- If your state is meant to be a number, I recommend initializing it with a number (such as 0 or -1)
+- You can initialize with ```null```
+- There is no hard and fast rules for this, just keep it in mind as it can cause errors when your React app first loads
+
+---
+
+## 💡 Conclusion
+
+Events and state are both important and can work together to allow the DOM to reflect a users interactions and activities by:
+
+1. Attaching events to parts of our JSX
+
+2. Updating the state based on the goal of the event
+
+3. State change forces a re-render that will cause DOM manipulation and reflect the changes on the interface

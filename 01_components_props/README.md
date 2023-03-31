@@ -1,9 +1,4 @@
----
-
-title: "01_components_props"
-
----
-
+# Components and Props
 ### SWBATs:
 
 - [ ] Review the benefits of React over Vanilla JS
@@ -18,18 +13,6 @@ title: "01_components_props"
 - [ ] Review how a component is written
 - [ ] Recognize destructured props and how to work with them
 - [ ] Observe how to render multiple components from a list
-
----
-
-## ✅ Objectives 
-
-- Discuss the benefits of React over Vanilla JS
-- Explain the importance of components
-- Practice writing components
-- Define props and how to create them
-- Recognize destructured props and how to work with them
-- Recognize best practices when writing components and props
-- Render multiple components from a list
 
 ---
 
