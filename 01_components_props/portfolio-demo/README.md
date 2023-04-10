@@ -1,6 +1,6 @@
 # Components & Props
 
-### SWBATs:
+## SWBATs:
 
 - [ ] Review the benefits of React over Vanilla JS
 - [ ] Explain the difference between HTML and JSX 
@@ -14,56 +14,61 @@
 - [ ] Review how a component is written
 - [ ] Recognize destructured props and how to work with them
 - [ ] Observe how to render multiple components from a list
+---
 
-
-<!-- demo -->
-### Deliverables
+## Deliverables
 
 #### 1. Create an `App` component that:
 
-- Returns the `Header`, `ProjectForm` and `ProjectList` components
+##### - Returns a `Header`, `ProjectForm` and `ProjectList` components
 
-- Provides the array of `projects` to `ProjectList` as props
+##### - Provides the array of `projects` to `ProjectList` as props
 
-#### 2. Create a `header` component that:
+<br />
 
-- Renders the text `Header`
+##### 1a. Create a `Header` component that renders the text `Header`
 
-#### 3. Create a `ProjectForm` component that:
+##### 1b. Create a `ProjectForm` component that renders the text `ProjectForm`
 
-- Renders the text `ProjectForm`
+##### 1c. Create a `ProjectList` component that renders the text `ProjectList`
 
-#### 4. Define a `ProjectList` component that:
+<br />
 
-- Accepts the props provided to the component
+#### 2. Define a `ProjectList` component that:
 
-- Destructures `projects` from the props object
+##### 2a. - Accepts the props provided to the component
 
-- Maps over the `projects` array to render the `ProjectListItem` component for each element:
+##### 2b. - Destructures `projects` from the props object
 
-  - Provide a key prop set to the `project id` value
+##### 2c. - Maps over the `projects` array to render a `ProjectListItem` component for each element:
 
-  - Provide each `project` object as a prop named `project`
+#####  - Provide a key prop set to the `project id` value
 
-#### 5. Define a `ProjectListItem` component that:
+#####  - Provide each `project` object as a prop named `project`
 
-- Accepts the props argument
+<br />
 
-- Destructure the props object and return `project`
+##### 3. Define a `ProjectListItem` component that:
 
-- Destructure the properties of the `project` object
+##### 3a. Accepts the props argument
 
-- Create an `img` element nested inside a `figure` element
+##### 3b. Destructure the props object and return `project`
 
-- Set the `img` property `src` to the `img` variable created when destructuring
+##### 3c. Destructure the properties of the `project` object
 
-- Set the `img` property `alt` to `project: ${name}`
+#####  3d. Displays the information of the `project` object
 
-- Create an `article` element with `h4` and `p` tags nested inside
+##### - Create an `img` element nested inside a `figure` element
 
-  - Dynamically render each project name inside the `h4` tag
+##### - Set the `img` property `src` to the `img` variable created when destructuring
 
-  - Dynamically render each project's about data inside the `p` tag
+##### - Set the `img` property `alt` to `{name}`
+
+##### - Create an `article` element with `h4` and `p` tags nested inside
+
+<br />
+
+#### 4. Dynamically render each project name inside the `h4` tag and the project about inside the `p` tag
 
 
 ### Resources

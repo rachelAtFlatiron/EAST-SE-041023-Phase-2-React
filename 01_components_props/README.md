@@ -1,5 +1,5 @@
 # Components and Props
-### SWBATs:
+## SWBATs:
 
 - [ ] Review the benefits of React over Vanilla JS
 - [ ] Explain the difference between HTML and JSX 
@@ -125,8 +125,6 @@ Components are the building blocks of React. A component is a function that:
 
 - Takes in some raw data (props)
 - Returns user interface (JSX)
-
-</p>
 
 ```js
 const Header = () => {

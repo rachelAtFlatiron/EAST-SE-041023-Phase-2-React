@@ -2,6 +2,7 @@
   "name": "phase-2-portfolio",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8000",
   "dependencies": {
     "json-server": "^0.17.3",
     "react": "^18.2.0",

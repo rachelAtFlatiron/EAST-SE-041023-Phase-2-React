@@ -9,7 +9,7 @@
 
 | Lecture | Notes | Videos | Starter | Solution |
 | ------- | :---: | ------ | ------- | -------- |
-| 1. Components & Props | Notes | Video | Starter | Solution |
+| 1. Components & Props | [Notes](https://docs.google.com/document/d/1Kjsk2vV38gxTpbKmPGh8jO4S4yftbVSpA3wvQ9WqWNg/edit?usp=sharing) | Video | Starter | Solution |
 | 2. State & Events | Notes | Video | Starter | Solution |
 | 3. Information Flow  | Notes | Video | Starter | Solution |     |
 | 4. Forms  | Notes | Video | Starter | Solution |
@@ -95,11 +95,11 @@
 ## 5: Side Effects & Data Fetching
 
 ### SWBATs:
-- Explain what a side effect is
-- Observe how React manages side effects with the useEffect hook
-- Observe how to use the useEffect hook to fetch data on page load
-- Observe how to send a POST request via form
-- Review changing parent state
+- [ ] Explain what a side effect is
+- [ ] Observe how React manages side effects with the useEffect hook
+- [ ] Observe how to use the useEffect hook to fetch data on page load
+- [ ] Observe how to send a POST request via form
+- [ ] Review changing parent state
 ### Lecture Topics:
 - useEffect
 - Dependency array
@@ -108,8 +108,8 @@
 ***
 ## 6: PATCH & DELETE
 ### SWBATs:
-- Observe how to send a PATCH & DELETE request
-- Review changing parent state
+- [ ] Observe how to send a PATCH & DELETE request
+- [ ] Review changing parent state
 ### Lecture Topics:
 - fetch => PATCH & DELETE
 
@@ -117,10 +117,10 @@
 ## 7: Client Side Routing
 
 ### SWBATs:
-- Review the difference between server-side and client-side routing
-- Observe a refactor to include client-side routing using React Router V5
-- Explain what a nested route is
-- Observe how to handle nested client-side routes 
+- [ ] Review the difference between server-side and client-side routing
+- [ ] Observe a refactor to include client-side routing using React Router V5
+- [ ] Explain what a nested route is
+- [ ] Observe how to handle nested client-side routes 
 ### Lecture Topics:
 - React Router
 
