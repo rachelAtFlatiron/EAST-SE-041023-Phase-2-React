@@ -1,6 +1,6 @@
 # State and Events
 
-### SWBATs:
+## SWBATs:
 
 - [ ] Understand how to create events in React
 - [ ] Review event handler functions, a type of callback function
@@ -16,35 +16,40 @@
 
 *** 
 
-### Deliverables
+## Deliverables
 
 #### 1. Add a click event to the 'Dark Mode' button inside the `Header` component:
 
-- Initialize state `isDarkMode` to true
+##### 1a. In `App.js` initialize state `isDarkMode` to true
 
-- Define a function 'handleClick' that will toggle and update the `isDarkMode` state
+##### 1b. Define a function 'handleClick' that will toggle and update the `isDarkMode` state
+- pass it down to `Header.js`
 
+##### 1c. Create a button in `Header.js` to toggle dark/light mode
 - Attach a 'click' event to the button that invokes the callback function `handleClick`
+- Create a ternary to set the button text
 
-#### 2. Add a click event to the clap button inside the `ProjectListItem` component:
+#### 2. Add a click event to a clap button inside the `ProjectListItem` component that increments by one when triggered:
 
-- Initialize state `clapCounts` set to 0
+##### 2a. Create a clap button in the `figure` div 
+##### 2b. Initialize state `clapCounts` set to 0
 
-- Create a function `handleClap` that will increment and update the `clapCounts` state by 1
+##### 2c. Create a function `handleClap` that will increment and update the `clapCounts` state by 1
 
-- Attach a 'click' event to the clap button that invokes the callback function `handleClap`
+##### 2d. Attach a 'click' event to the clap button that invokes the callback function `handleClap`
 
 #### 3. Implement a Filter by project name feature inside the `ProjectList` component:
 
-- Initialize state `searchQuery` set to an empty string
+##### 3a. Create buttons in `ProjectList.js` that represent each phase.
+##### 3b. Initialize state `searchQuery` and `phase` set to an empty string
 
-- Add an `onChange` event to the search input field
+##### 3c.  Add an `onChange` event to the search input field and `onClick` events to the buttons
 
-- When the `onChange` event occurs, update the `searchQuery` state to the value in the input field
+##### 3d. When the `onChange` and `onClick` event occurs, update the `searchQuery`  and `phase` state 
 
-- Given the array of `projects`, filter the projects that include the value of the search query
+##### 3e. Given the array of `projects`, filter the projects that include the value of the search query and phase
 
-### Resources
+## Resources
 
 - [React Docs - Events](https://reactjs.org/docs/events.html)
 - [React Docs - Hooks](https://reactjs.org/docs/hooks-overview.html)
