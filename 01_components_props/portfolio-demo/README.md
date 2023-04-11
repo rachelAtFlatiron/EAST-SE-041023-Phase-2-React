@@ -24,7 +24,6 @@
 
 ##### - Provides the array of `projects` to `ProjectList` as props
 
-<br />
 
 ##### 1a. Create a `Header` component that renders the text `Header`
 
@@ -48,7 +47,7 @@
 
 <br />
 
-##### 3. Define a `ProjectListItem` component that:
+#### 3. Define a `ProjectListItem` component that:
 
 ##### 3a. Accepts the props argument
 
@@ -70,6 +69,7 @@
 
 #### 4. Dynamically render each project name inside the `h4` tag and the project about inside the `p` tag
 
+***
 
 ### Resources
 

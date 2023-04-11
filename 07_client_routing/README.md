@@ -1,6 +1,17 @@
 
 # Client Side Routing
 
+---
+
+convert to react 6
+
+---
+
+nested routes are different
+https://stackoverflow.com/questions/64291991/nested-routing-is-not-working-in-react-router-v6
+
+---
+
 ## SWBATs
 
 - [ ] Review the difference between server-side and client-side routing

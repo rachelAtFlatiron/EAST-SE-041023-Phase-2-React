@@ -23,11 +23,13 @@
 ##### 1a. In `App.js` initialize state `isDarkMode` to true
 
 ##### 1b. Define a function 'handleClick' that will toggle and update the `isDarkMode` state
-- pass it down to `Header.js`
+##### - pass it down to `Header.js`
 
 ##### 1c. Create a button in `Header.js` to toggle dark/light mode
-- Attach a 'click' event to the button that invokes the callback function `handleClick`
-- Create a ternary to set the button text
+##### - Attach a 'click' event to the button that invokes the callback function `handleClick`
+##### - Create a ternary to set the button text
+
+<br />
 
 #### 2. Add a click event to a clap button inside the `ProjectListItem` component that increments by one when triggered:
 
@@ -37,6 +39,8 @@
 ##### 2c. Create a function `handleClap` that will increment and update the `clapCounts` state by 1
 
 ##### 2d. Attach a 'click' event to the clap button that invokes the callback function `handleClap`
+
+<br />
 
 #### 3. Implement a Filter by project name feature inside the `ProjectList` component:
 
@@ -49,6 +53,7 @@
 
 ##### 3e. Given the array of `projects`, filter the projects that include the value of the search query and phase
 
+***
 ## Resources
 
 - [React Docs - Events](https://reactjs.org/docs/events.html)

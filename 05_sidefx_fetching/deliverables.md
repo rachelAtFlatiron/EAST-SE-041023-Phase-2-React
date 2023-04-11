@@ -17,6 +17,8 @@
 
 ##### 1a. Send the new project data to the server using a `POST` fetch request
 
+<br />
+
 #### 2. Implement useEffect in App component to load projects
 
 ##### 2a. Import the `useEffect` hook from the React library
@@ -25,11 +27,15 @@
 
 ##### 2c. `projects` state to response from the server
 
+<br />
+
 #### 3. Demonstrate the order of operations between rendering a component and running the side effect
 
 ##### - Place a console.log() inside the `App` component as well as the `useEffect` method
 
 ##### - Open up the devtools to observe when each phase of the component will occur 
+
+<br />
 
 #### 4. Demonstrate the unmounting and cleanup phase of a component through `useEffect`
 
