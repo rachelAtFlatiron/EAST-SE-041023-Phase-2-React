@@ -118,9 +118,13 @@
 
 ### SWBATs:
 - [ ] Review the difference between server-side and client-side routing
-- [ ] Observe a refactor to include client-side routing using React Router V5
-- [ ] Explain what a nested route is
-- [ ] Observe how to handle nested client-side routes 
+- [ ] Observe a refactor to include client-side routing using React Router V6
+- [ ] Observe how to use the react-router-dom hooks useLocation, useNavigate, and useParams
 ### Lecture Topics:
 - React Router
 
+***
+
+# Demo Documentation
+[Figma Wireframes](https://www.figma.com/file/EiEpomnCYh7AGbhqc2p3pk/Phase-2-Portfolio-Demo?node-id=0%3A1&t=T9ErK0aPEaRDSu0k-1)
+[Api Documentation via Postman](https://documenter.getpostman.com/view/26331028/2s93Y3uLLX)

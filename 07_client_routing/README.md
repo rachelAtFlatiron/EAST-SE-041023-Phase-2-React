@@ -1,23 +1,11 @@
 
 # Client Side Routing
 
----
-
-convert to react 6
-
----
-
-nested routes are different
-https://stackoverflow.com/questions/64291991/nested-routing-is-not-working-in-react-router-v6
-
----
-
 ## SWBATs
 
 - [ ] Review the difference between server-side and client-side routing
-- [ ] Observe a refactor to include client-side routing using React Router V5
-- [ ] Explain what a nested route is
-- [ ] Observe how to handle nested client-side routes
+- [ ] Observe a refactor to include client-side routing using React Router V6
+- [ ] Observe how to use the react-router-dom hooks useLocation, useNavigate, and useParams
 
 ---
 

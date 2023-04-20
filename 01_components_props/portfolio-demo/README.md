@@ -22,7 +22,7 @@
 
 ##### - Returns a `Header`, `ProjectForm` and `ProjectList` components
 
-##### - Provides the array of `projects` to `ProjectList` as props
+
 
 
 ##### 1a. Create a `Header` component that renders the text `Header`
@@ -30,16 +30,19 @@
 ##### 1b. Create a `ProjectForm` component that renders the text `ProjectForm`
 
 ##### 1c. Create a `ProjectList` component that renders the text `ProjectList`
+##### 1d. Provides the array of `projects` to `ProjectList` as props
+##### - import `projects.js`
+##### - pass it as props to `ProjectList`
 
 <br />
 
 #### 2. Define a `ProjectList` component that:
 
-##### 2a. - Accepts the props provided to the component
+##### 2a. Accepts the props provided to the component
 
-##### 2b. - Destructures `projects` from the props object
+##### 2b. Destructures `projects` from the props object
 
-##### 2c. - Maps over the `projects` array to render a `ProjectListItem` component for each element:
+##### 2c. Maps over the `projects` array to render a `ProjectListItem` component for each element:
 
 #####  - Provide a key prop set to the `project id` value
 
