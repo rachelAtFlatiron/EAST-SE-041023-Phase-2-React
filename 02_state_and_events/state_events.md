@@ -26,7 +26,7 @@ title: '02_state_and_events'
 const pizza = document.getElementById("pizza");
 
 // 2. Add an event listener to that element
-pizza.addEventListener;
+pizza.addEventListener(...);
 
 // 3. Give type and callback to the event listener:
 pizza.addEventListener("click", () => {
@@ -40,7 +40,6 @@ In React we can skip directly to step 2 by adding the event listener and handler
 ##  Events in React 
 
 ```js
-//definition of a super short component
 const Counter = () => {
   
   return <button onClick={() => console.log("clicked!")}>Click Me</button>;
