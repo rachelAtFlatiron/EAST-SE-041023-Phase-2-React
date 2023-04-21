@@ -42,11 +42,7 @@
 
 ##### 2b. Destructures `projects` from the props object
 
-##### 2c. Maps over the `projects` array to render a `ProjectListItem` component for each element:
-
-#####  - Provide a key prop set to the `project id` value
-
-#####  - Provide each `project` object as a prop named `project`
+##### 2c. Displays each project title in an `li` element
 
 <br />
 
@@ -60,13 +56,25 @@
 
 #####  3d. Displays the information of the `project` object
 
-##### - Create an `img` element nested inside a `figure` element
+```js
+<li className="card">
+    <figure className="image">
+        <img src="" alt="" />
+        <button className="claps">👏""</button>
+    </figure>
+    <section className="details">
+        <h4>""</h4>
+        <p>""</p>
+        <p>
+            <a href="">Link</a>
+        </p>
+    </section>
 
-##### - Set the `img` property `src` to the `img` variable created when destructuring
-
-##### - Set the `img` property `alt` to `{name}`
-
-##### - Create an `article` element with `h4` and `p` tags nested inside
+    <footer className="extra">
+        <span className="badge blue">Phase ""</span>
+    </footer>
+</li>
+```
 
 <br />
 
