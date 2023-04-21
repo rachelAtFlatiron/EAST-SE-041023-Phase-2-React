@@ -13,7 +13,3 @@
 - [ ] Review how a component is written
 - [ ] Recognize destructured props and how to work with them
 - [ ] Observe how to render multiple components from a list
-
----
-
-## Slides
