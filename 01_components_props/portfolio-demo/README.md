@@ -42,11 +42,7 @@
 
 ##### 2b. Destructures `projects` from the props object
 
-##### 2c. Maps over the `projects` array to render a `ProjectListItem` component for each element:
-
-#####  - Provide a key prop set to the `project id` value
-
-#####  - Provide each `project` object as a prop named `project`
+##### 2c. Displays each project title in an `li` element
 
 <br />
 
