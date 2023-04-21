@@ -1,7 +1,0 @@
-# Deliverables
-
-## SWBATs:
-
-*** 
-
-## Deliverables
