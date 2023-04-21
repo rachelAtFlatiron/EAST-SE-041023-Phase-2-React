@@ -133,15 +133,6 @@ const projects = [
 		id: 30,
 	},
 	{
-		name: "",
-		about: "",
-		image: "",
-		claps: 0,
-		link: "",
-		phase: 0,
-		id: 31,
-	},
-	{
 		name: "Netflix",
 		about:
 			"Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more.",
