@@ -28,6 +28,12 @@ title: "07_client_routing"
 
 ---
 
+## Note: 
+
+While the curriculum has lessons for React Router V5 we will be using React Router V6
+
+---
+
 ##  The Primary React Router Components 
 
 - BrowserRouter (as Router)

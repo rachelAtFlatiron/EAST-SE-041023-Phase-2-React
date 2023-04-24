@@ -18,8 +18,6 @@ title: "08_context"
 
 This can get very complicated, tedious, and messy...
 
-<img src='../assets/prop-drilling.png' width="500px"/>
-
 ---
 
 ## Context
@@ -29,27 +27,22 @@ That's why we have React Context!
 - React Context provides a way to share data across components without manually passing props to each component
 - This is useful for passing down user preferences or authentication status, location-specific data, dark theme or light theme
 
-<img src='../assets/context-provider.png' width="500px" />
+<img src='https://www.carlrippon.com/static/0d1f722d0fe4c2bc4c3d71595dbe67dd/4d383/prop-drilling-v-context.png' width="500px" />
 
 ---
 
 ## How to use context?
 
-1. create the context
-2. wrap your component tree with the context provider
+1. create the context 
+2. wrap your components with the context provider
 3. pass any values into your context provider
-4. read the value in whatever component you want using the context consumer
+4. read the value in whatever component you want using the context consumer (useContext)
 
 ---
 
-## A few notes
-
-- context doesn't hold info, it represents the KIND of info you can provide
-
-
 ## createContext()
 
-- To create a context we use createContext()!
+- To create a context we use `createContext()`!
 - This method returns a Provider and Consumer component
 
 ```js
@@ -63,7 +56,7 @@ Note: it is typical to create a separate file containing your contexts
 ## The Provider
 
 - The provider is a React component that allows child components to use our context 
-- We pass in a value prop which can be anything - a string, object, function, etc.
+- We pass a value prop to the provider which can be anything - a string, object, function, etc.
 
 ```js
 //NOTE: YOU HAVE TO USE THE TERM 'VALUE'

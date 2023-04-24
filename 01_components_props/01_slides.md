@@ -124,6 +124,9 @@ NOTE: ReactDOM.render only works with React up to version 17.  We will be using 
 
 <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*CqdIWZy0NMPQhYx2rKzo9g.png" width="900px"/>
 
+---
+
+<img src="https://react.dev/images/docs/s_thinking-in-react_ui_outline.png" width="900px" />
 
 ---
 
@@ -153,6 +156,10 @@ The goals for Phase 2:
 - Create a static frontend site with components and props (DOM Manipulation)
 - Use state and events to make your site dynamic (Event Handling)
 - Add side effects and data fetching to communicate with a server (Network Communication)
+
+---
+
+## `create-react-app` demo
 
 ---
 
@@ -264,6 +271,7 @@ function Card(props) {
   );
 }
 ```
+
 ---
 
 ## Component Iteration
@@ -296,6 +304,12 @@ We can expand on this by translating using `forEach`
 - Use components to break down complex UI into smaller pieces which creates a better separation of concerns
 - Easier to maintain
 
+
+---
+
+
+<img src="https://react.dev/images/docs/s_thinking-in-react_ui_outline.png" width="900px" />
+
 ---
 
 ## Wireframes 
@@ -306,3 +320,7 @@ Tools:
 - [Balsamiq](https://balsamiq.com/)
 - [Figma](https://www.figma.com/wireframe-tool)
 - [LucidChart](https://www.lucidchart.com/pages/examples/wireframe_software)
+
+---
+
+## Components Demo

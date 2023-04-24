@@ -92,7 +92,7 @@ This is helpful in the case where we need to introduce additional event handling
 
 ---
 
-## Demo
+## Demo: Events
 
 ---
 
@@ -215,3 +215,7 @@ Events and state are both important and can work together to allow the DOM to re
 2. Updating the state based on the goal of the event
 
 3. State change forces a re-render that will cause DOM manipulation and reflect the changes on the interface
+
+---
+
+## Demo: State

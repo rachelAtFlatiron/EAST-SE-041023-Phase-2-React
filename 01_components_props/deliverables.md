@@ -18,11 +18,9 @@
 
 ## Deliverables
 
-#### 1. Create an `App` component that:
+#### 1. Create an `App` component displays the following child components:
 
-##### - Returns a `Header`, `ProjectForm` and `ProjectList` components
-
-
+##### - A `Header`, `ProjectForm` and `ProjectList` component
 
 
 ##### 1a. Create a `Header` component that renders the text `Header`
@@ -30,31 +28,36 @@
 ##### 1b. Create a `ProjectForm` component that renders the text `ProjectForm`
 
 ##### 1c. Create a `ProjectList` component that renders the text `ProjectList`
-##### 1d. Provides the array of `projects` to `ProjectList` as props
+
+##### 1d. Import the child components into `App` and render
+
+<br />
+
+#### 2. Provide the array of `projects` to `ProjectList` as props
+
 ##### - import `projects.js`
 ##### - pass it as props to `ProjectList`
 
 <br />
 
-#### 2. Define a `ProjectList` component that:
+#### 3. Update the `ProjectList` component to render a list of project titles:
 
-##### 2a. Accepts the props provided to the component
+##### 3a. Create a `ProjectListItem` component
 
-##### 2b. Destructures `projects` from the props object
-
-##### 2c. Displays each project title in an `li` element
+##### 3b. In `ProjectList` create a `ProjectListItem` for each project title
 
 <br />
 
-#### 3. Define a `ProjectListItem` component that:
+#### 4. Update the `ProjectListItem` component to display the entire project:
 
-##### 3a. Accepts the props argument
+##### 4a. Accept the entire `project` as an argument
 
-##### 3b. Destructure the props object and return `project`
+##### 4b. Destructures the props object
 
-##### 3c. Destructure the properties of the `project` object
+#####  4c. Displays the information of the `project` object
 
-#####  3d. Displays the information of the `project` object
+<br />
+
 
 ```js
 <li className="card">
@@ -75,10 +78,6 @@
     </footer>
 </li>
 ```
-
-<br />
-
-#### 4. Dynamically render each project name inside the `h4` tag and the project about inside the `p` tag
 
 ***
 

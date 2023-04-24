@@ -23,9 +23,9 @@
 
 ##### 2a. Import the `useEffect` hook from the React library
 
-##### 2b. `useEffect` and make a `GET` request using the `fetch` method
+##### 2b. Use `useEffect` and make a `GET` request using the `fetch` method
 
-##### 2c. `projects` state to response from the server
+##### 2c. Update `projects` state to the response from the server
 
 <br />
 

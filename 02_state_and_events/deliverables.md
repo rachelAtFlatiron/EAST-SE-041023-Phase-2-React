@@ -18,40 +18,39 @@
 
 ## Deliverables
 
-#### 1. Add a click event to the 'Dark Mode' button inside the `Header` component:
+#### 1. Create a dark mode button in `App.js` 
 
-##### 1a. In `App.js` initialize state `isDarkMode` to true
+##### 1a. Initialize state `isDarkMode` to true
 
 ##### 1b. Define a function 'handleClick' that will toggle and update the `isDarkMode` state
-##### - pass it down to `Header.js`
 
-##### 1c. Create a button in `Header.js` to toggle dark/light mode
-##### - Attach a 'click' event to the button that invokes the callback function `handleClick`
-##### - Create a ternary to set the button text
+##### 1c. Add a click event to the 'Dark Mode' button inside the `App` component that takes `handleClick` as the callback function
+
+##### - Create a ternary to set the button text between "Light Mode" and "Dark Mode'
 
 <br />
 
-#### 2. Add a click event to a clap button inside the `ProjectListItem` component that increments by one when triggered:
+#### 2. Add a click event to a clap button inside the `ProjectListItem` component that increments claps by one when triggered:
 
 ##### 2a. Create a clap button in the `figure` div 
 ##### 2b. Initialize state `clapCounts` set to 0
 
-##### 2c. Create a function `handleClap` that will increment and update the `clapCounts` state by 1
+##### 2c. Create a function `handleClap` that will increment the `clapCounts` state by 1
 
 ##### 2d. Attach a 'click' event to the clap button that invokes the callback function `handleClap`
 
 <br />
 
-#### 3. Implement a Filter by project name feature inside the `ProjectList` component:
+#### 3. Implement a filter by project phase feature inside the `ProjectList` component:
 
 ##### 3a. Create buttons in `ProjectList.js` that represent each phase.
-##### 3b. Initialize state `searchQuery` and `phase` set to an empty string
+##### 3b. Initialize state `phase` set to 0
 
-##### 3c.  Add an `onChange` event to the search input field and `onClick` events to the buttons
+##### 3c. Create a callback function, `handleClick` that will update phase
 
-##### 3d. When the `onChange` and `onClick` event occurs, update the `searchQuery`  and `phase` state 
+##### 3d.  Add `onClick` events to the phase buttons with the callback function `handleClick`
 
-##### 3e. Given the array of `projects`, filter the projects that include the value of the search query and phase
+##### 3e. Given the array of `projects`, filter the projects by phase
 
 ***
 ## Resources

@@ -16,10 +16,12 @@ What URLs do we want our application to have to simulate the feeling of differen
 | --------------- | ------------------ |
 | Home            | / (root route)     |
 | About           | /about             |
-| ProjectForm     | /projects/new      |
-| ProjectEditForm | /projects/:id/edit |
+| CreateProjectForm     | /projects/new      |
+| EditProjectForm | /projects/:id/edit |
 | ProjectDetail   | /projects/:id      |
 | ProjectList     | /projects          |
+
+🛑🛑🛑🛑🛑<strong>THESE ARE DIFFERENT THAN THE SERVER ROUTES</strong>🛑🛑🛑🛑🛑
 
 ---
 
@@ -32,13 +34,12 @@ What URLs do we want our application to have to simulate the feeling of differen
 
 
 
-##### 1a. Within `index.js`, wrap the `App` component in the `BrowserRouter` component that will be imported from the `react-router-dom` library
+##### 1a. Within `index.js`, import the `react-router-dom` library and wrap the `App` component with `BrowserRouter` 
 
 <br /> 
 
-#### 2. Create the following new components: `Home.js`, `About.js`, `ProjectsPage.js`
-##### 2a. Put some stuff in `Home.js` and `About.js`
 
+#### 2. Create the following new components: `Home.js`, `About.js`, `ProjectsPage.js`, `CreateProjectForm.js`, `EditProjectForm.js` and `ProjectDetail.js`
 
 <br /> 
 
@@ -47,39 +48,67 @@ What URLs do we want our application to have to simulate the feeling of differen
 ##### - `/new` to `<CreateProjectForm />`
 ##### - `/about` to `<About />`
 ##### - `/projects` to `<ProjectsPage />`
+##### - `/projects/:id` to `<ProjectDetails />`
+##### - `/projects/new` to `<CreateProjectForm />`
+##### - `/projects/:id/edit` to `<EditProjectForm />`
 
 
 <br /> 
 
+
 #### 4. Add `Link`s and `NavLink`s in `Header` for the new routes
 ##### 4a. Include a `Link` on button `View All Projects` in `Home` that navigates to `/projects`
-
+##### 4b. In `ProjectsPage` replace `<CreateProjectForm />` with a `Link` to the appropriate route
 
 <br /> 
 
 #### 5. Refactor `App.js` and `ProjectsList` to move everything to `ProjectsPage` such that `App` only contains the `Router` tree and the `Header`
-##### 5a. Keep the search functionality and `filteredProjects` in `ProjectsList`
+##### - Keep the search functionality in `ProjectsList`
 
 
 <br /> 
 
-#### 6. In `ProjectsPage` replace `<CreateProjectForm />` with a `Link` to the appropriate route
-##### 6a. In `CreateProjectForm` navigates to the `/projects` link when a new project is successfully created.
+#### 6. Refactor so that the new project form is in `CreateProjectForm` 
+##### 6a. Redirect to the `/projects` page when a new project is successfully created.
 
 
 <br /> 
 
-#### 7. Create a `ProjectDetails` page that will display the details for only one project.
-##### 7a. In `App.js` create a `Route` that navigates to `/project/:id`
-##### 7b. In `ProjectListItem` wrap `figure.image` with a `Link` to `/project/:id`
-##### 7c. In `ProjectDetails` use `useParams` and `useEffect` to fetch the individual project
-##### - use `id` in the `useEffect` dependancy array
 
+#### 8. In `ProjectListItem` add a `Link` that navigates to `/project/:id`
+##### 8a. Include the id in the `Link`
+##### 8b. Use a fetch request in `ProjectDetails` to access a single project
 
-<br /> 
+<br />
 
-#### 8. In `ProjectListItem` refactor the `Link` to include `state` with `project`
-##### 8a. Refactor `ProjectDetails` to use `useLocation` to access `project` information
+```js
+    <div className="card project-detail">
+        <figure className="image">
+            <img src={project.image} alt={project.name} />
+            <button className="claps" onClick={handleClaps}>
+                👏{project.claps}
+            </button>
+        </figure>
+        <section className="details">
+            <h4>{project.name}</h4>
+            <p>{project.about}</p>
+            <p>
+                <a href={project.link}>Link</a>
+            </p>
+        </section>
+        <div className="extra">
+            <span className="badge blue">Phase {project.phase}</span>
+            <div className="manage">
+                <Link to={`/projects/${project.id}/edit`} state={{project}}>
+                    <button>
+                        <FaPencilAlt />
+                    </button>
+                </Link>
+            </div>
+            {/* note no delete for ease of demonstration */}
+        </div>
+    </div>
+```
 
 
 <br /> 
@@ -87,4 +116,4 @@ What URLs do we want our application to have to simulate the feeling of differen
 #### 9. In `App` create a route for `/project/:id/edit`
 ##### 9a. In `ProjectDetails` create a `Link` to `/project/:id/edit` with state `project`
 ##### 9b. Navigate to `/projects` upon successful submission of the edit form.
-##### - this is for demonstration purposes only
+

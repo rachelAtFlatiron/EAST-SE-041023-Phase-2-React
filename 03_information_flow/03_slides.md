@@ -34,6 +34,10 @@ title: '03_information_flow'
 
 ---
 
+## Demo: DrawIO
+
+---
+
 ## Steps
 
 1. add data to state in parent
@@ -50,10 +54,6 @@ title: '03_information_flow'
 
 ---
 
-## Demo
-
----
-
 ## 💡 Conclusion: 
 
 Lifting state up allows us to share data across different components without having to redefine that state where it is needed. The lowest common parent component is the best place to create the state and the process of sharing the data is done through the passing of props.
@@ -61,3 +61,7 @@ Lifting state up allows us to share data across different components without hav
 Because this data is now created elsewhere, we also have to be mindful of how the state is managed. Best practice is to always maintain and manage state where it has been defined. In order to do so successfully if behavior lives in a child component but state belongs to a parent component, is through inverse data flow. 
 
 This means creating a callback function in the parent component that will be responsible for updating the state and passing it down as a prop to the child component with the behavior.
+
+---
+
+## Demo: Lifting State

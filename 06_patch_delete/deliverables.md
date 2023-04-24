@@ -5,6 +5,8 @@
 - [ ] Observe how to send PATCH & DELETE requests
 - [ ] Review changing parent state
 
+***
+
 ## Deliverables
 
 #### 1. Create a `ProjectEditForm` component
@@ -12,8 +14,9 @@
 <br />
 
 #### 2. Create state in `App` to represent the project to edit
-##### 2a. Add a button to `ProjectListItem` that, when clicked on, will update said state with the appropriate project object
-##### 2b. If `projectToEdit` has been updated display the `ProjectEditForm` with the appropriate data.
+##### 2a. Add a button to `ProjectListItem` that, when clicked on, will:
+##### - update said state with the appropriate project object
+##### - display the `ProjectEditForm` with the appropriate data.
 
 <br />
 
