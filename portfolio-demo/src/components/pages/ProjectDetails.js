@@ -1,27 +1,17 @@
-import { useState, useEffect } from "react";
-import { useParams, useLocation, Link } from "react-router-dom";
-import { FaPencilAlt, FaTrash } from "react-icons/fa";
+import { useContext } from 'react'
+import { useLocation, Link } from "react-router-dom";
+import { FaPencilAlt } from "react-icons/fa";
+import { ProjectContext } from "../../contexts/ProjectContext";
 
 function ProjectDetails() {
-	// const [project, setProject] = useState({});
-	// const { id } = useParams();
+	
+	const ctx = useContext(ProjectContext)
 
 	const location = useLocation();
 	const { project } = location.state;
 
-	// useEffect(() => {
-	// 	fetch(`/projects/${id}`)
-	// 		.then((r) => r.json())
-	// 		.then((project) => {
-	// 			setProject(project);
-	// 		});
-	// }, [id]);
-
 	const handleClaps = () => {
-		alert("see console");
-		console.log("no handle claps for the sake of demonstration");
-		console.log("we would have to reuse fetch patch from projectListItem");
-		console.log("perhaps we could do this with context");
+		ctx.updateProject(project.id, {...project, claps: parseInt(project.claps + 1)})
 	};
 
 	return (

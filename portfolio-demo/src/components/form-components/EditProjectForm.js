@@ -1,19 +1,20 @@
-import { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom"
+import { useState, useEffect, useContext } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { ProjectContext } from "../../contexts/ProjectContext";
 
 // function EditProjectForm({ project, updateProjects }) {
 function EditProjectForm() {
+	let ctx = useContext(ProjectContext);
+
 	const [formData, setFormData] = useState({});
+	const location = useLocation();
+	const { project } = location.state;
 
-	const location = useLocation()
-	console.log(location)
-	const { project } = location.state 
-
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 
 	useEffect(() => {
-		setFormData(project)
-	}, [project])
+		setFormData(project);
+	}, [project]);
 
 	const handleOnChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,16 +23,17 @@ function EditProjectForm() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		fetch(`/projects/${project.id}`, {
-			method: "PATCH",
-			body: JSON.stringify({ ...formData, phase: parseInt(formData.phase) }),
-			headers: {
-				"content-type": "application/json",
-			},
-		})
-    .then((res) => res.json())
-	.then(() => navigate("/projects"))
-    // .then((data) => updateProjects(data));
+		// 	fetch(`/projects/${project.id}`, {
+		// 		method: "PATCH",
+		// 		body: JSON.stringify({ ...formData, phase: parseInt(formData.phase) }),
+		// 		headers: {
+		// 			"content-type": "application/json",
+		// 		},
+		// 	})
+		// .then((res) => res.json())
+		ctx.updateProject(project.id, { ...formData, phase: parseInt(formData.phase) })
+			.then(() => navigate("/projects"));
+		// .then((data) => updateProjects(data));
 	};
 
 	return (

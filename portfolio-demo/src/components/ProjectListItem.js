@@ -1,47 +1,32 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { FaPencilAlt, FaTrash } from "react-icons/fa";
+import { ProjectContext } from "../contexts/ProjectContext";
 
-function ProjectListItem({
-	project,
-	updateEditFormProject,
-	deleteProject,
-	updateProjects,
-}) {
+function ProjectListItem({project}) {
+	const ctx = useContext(ProjectContext);
 	const { id, image, about, name, link, phase, claps } = project;
 
-	const [clapCount, setClapCount] = useState(claps);
+	//state for clap count, don't want to re-render
+	//const [clapCount, setClapCount] = useState(claps);
 
+	//delete using context
 	const handleDelete = () => {
-		//TODO: fetch delete
-		fetch(`/projects/${project.id}`, {
-			method: "DELETE",
-		})
-			.then((res) => res.json())
-			.then((data) => deleteProject(project));
+		ctx.deleteProject(project.id);
 	};
 
+	//update using context
 	const handleClaps = () => {
-		setClapCount((prev) => prev + 1);
-		//TODO: fetch patch
-		fetch(`/projects/${project.id}`, {
-			method: "PATCH",
-			body: JSON.stringify({ claps: clapCount + 1 }),
-			headers: {
-				"content-type": "application/json",
-			},
-		})
-			.then((res) => res.json())
-			.then((data) => updateProjects(data));
+		//console.log(id, { claps: clapCount + 1})
+		ctx.updateProject(id, { claps: claps + 1 });
 	};
 
 	return (
 		<li className="card">
-			{/* <Link to={`/projects/${id}`} > */}
 			<figure className="image">
 				<img src={image} alt={name} />
 				<button className="claps" onClick={handleClaps}>
-					👏{clapCount}
+					👏{claps}
 				</button>
 			</figure>
 
@@ -60,7 +45,6 @@ function ProjectListItem({
 				<span className="badge blue">Phase {phase}</span>
 				<div className="manage">
 					<Link to={`/projects/${project.id}/edit`} state={{ project }}>
-						{/* <button onClick={() => updateEditFormProject(project)}> */}
 
 						<button>
 							<FaPencilAlt />

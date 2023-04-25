@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "dev": "react-scripts start && json-server --watch -p 8000 db.json",
+    "server": "json-server --watch -p 8000 db.json",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

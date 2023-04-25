@@ -1,23 +1,23 @@
 import { useState } from "react";
 import ProjectListItem from "./ProjectListItem";
 
-export default function ProjectList({ projects, updateEditFormProject, deleteProject, updateProjects }) {
+export default function ProjectList({ projects }) {
+
 	const [searchPhase, setSearchPhase] = useState(0);
 	const [searchFilter, setSearchFilter] = useState("");
 
-	const filteredProjects = projects.filter((el) => {
-		if (
+	//get filtered projects
+	const filteredProjects = projects.filter(
+		(el) =>
 			el.name.toLowerCase().includes(searchFilter.toLowerCase()) &&
 			(el.phase === searchPhase || searchPhase === 0)
-		) {
-			return true;
-		}
-		return false;
-	});
+	);
 
+	//on change for search query form
 	const handleOnChange = (e) => {
 		setSearchFilter(e.target.value);
 	};
+
 	return (
 		<section>
 			<h2>Projects</h2>
@@ -33,14 +33,16 @@ export default function ProjectList({ projects, updateEditFormProject, deletePro
 			<input
 				type="text"
 				placeholder="Search..."
-                name="search"
+				name="search"
 				value={searchFilter}
 				onChange={handleOnChange}
 			/>
 			<ul className="cards">
-			{
-                filteredProjects.map(el => <ProjectListItem project={el} updateEditFormProject={updateEditFormProject} updateProjects={updateProjects} deleteProject={deleteProject} />)
-            }
+				{filteredProjects.map((el) => (
+					<ProjectListItem
+						project={el}
+					/>
+				))}
 			</ul>
 		</section>
 	);

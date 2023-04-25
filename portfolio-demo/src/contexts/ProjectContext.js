@@ -1,43 +1,77 @@
-import { createContext, useState, useEffect } from "react"
+import { createContext, useState, useEffect } from "react";
 
-const ProjectContext = createContext()
+const ProjectContext = createContext();
 
 const CustomProjectProvider = ({ children }) => {
-    const [ testState, setTestState ] = useState("hi...i'm state")
-    const [ projects, setProjects ] = useState([])
+	const [projects, setProjects] = useState([]);
 
-    console.log('hi from projectscontex.js')
+	useEffect(() => {
+		console.log('project context getting projects')
+		getProjects()
+	}, [])
 
-    const getProjects = () => {
-        fetch('/projects')
-        .then(res => res.json())
-        .then(data => setProjects(data))
+	const topFive = () => {
+		return fetch("/projects?_sort=claps&_order=desc&_limit=5")
+		.then(res => res.json())
+		.then(data => data)
+	}
+
+	const getProjects = () => {
+		console.log('project context fetching/setting projects')
+		fetch("/projects")
+			.then((res) => res.json())
+			.then((data) => setProjects(data));
+	};
+
+	const deleteProject = (id) => {
+		fetch(`/projects/${id}`, {
+			method: "DELETE",
+		}).then(() => setProjects(projects.filter((el) => el.id !== id)));
+	};
+
+	const updateProject = (id, body) => {
+		fetch(`http://localhost:8000/projects/${id}`, {
+			method: "PATCH",
+			body: JSON.stringify(body),
+			headers: {
+				"content-type": "application/json",
+			},
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				let temp = [...projects]
+				temp = temp.map(el => el.id === data.id ? data : el)
+				setProjects(temp);
+			})
+	};
+
+    const createProject = (body) => {
+        return fetch("/projects", {
+			method: "POST",
+			body: JSON.stringify(body),
+			headers: {
+				"content-type": "application/json",
+			},
+		})
+			.then((res) => res.json())
+			.then((data) => setProjects(prev => [...prev, data]));
+
     }
 
-    const showTest = () => {
-        console.log("hi i'm from projectProvider")
-    }
+	const projectCtx = {
+		topFive,
+		getProjects,
+		deleteProject,
+		updateProject,
+        createProject,
+		projects,
+	};
 
+	return (
+		<ProjectContext.Provider value={projectCtx}>
+			{children} 
+		</ProjectContext.Provider>
+	);
+};
 
-    const projectCtx = {
-        showTest: showTest,
-        testState: testState,
-        getProjects
-    }
-
-    return(
-        <ProjectContext.Provider value={projectCtx}>
-            {children} {/* pretty sure this is composition */}
-        </ProjectContext.Provider>
-    )
-}
-
-export {ProjectContext, CustomProjectProvider}
-
-
-//import ProjectProvider into App.js or index.js? and wrap app.js with <ProjectProvider>
-//import ProjectContext into App.js or index.js? and create a ctx value
-// const ctx = useContext(ProjectContext)
-
-
-//
+export { ProjectContext, CustomProjectProvider };
