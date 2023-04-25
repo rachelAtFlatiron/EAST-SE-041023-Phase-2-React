@@ -10,7 +10,6 @@ function Header({ updateDarkMode }) {
 				</h1>
 			</Link>
 			<button onClick={updateDarkMode}>Dark Mode</button>
-			{/* note the curly braces around "/home" */}
 			<NavLink className="button" to={"/about"}>
 				About
 			</NavLink>

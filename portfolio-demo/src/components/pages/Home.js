@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useContext  } from 'react';
-import ProjectListItem from '../ProjectListItem'
 import { ProjectContext } from "../../contexts/ProjectContext";
+import ProjectListItem from '../ProjectListItem'
 
 function Home() {
 	const ctx = useContext(ProjectContext)

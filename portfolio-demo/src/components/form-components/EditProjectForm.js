@@ -2,7 +2,6 @@ import { useState, useEffect, useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ProjectContext } from "../../contexts/ProjectContext";
 
-// function EditProjectForm({ project, updateProjects }) {
 function EditProjectForm() {
 	let ctx = useContext(ProjectContext);
 
@@ -22,18 +21,8 @@ function EditProjectForm() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-
-		// 	fetch(`/projects/${project.id}`, {
-		// 		method: "PATCH",
-		// 		body: JSON.stringify({ ...formData, phase: parseInt(formData.phase) }),
-		// 		headers: {
-		// 			"content-type": "application/json",
-		// 		},
-		// 	})
-		// .then((res) => res.json())
 		ctx.updateProject(project.id, { ...formData, phase: parseInt(formData.phase) })
-			.then(() => navigate("/projects"));
-		// .then((data) => updateProjects(data));
+		navigate('/projects')
 	};
 
 	return (

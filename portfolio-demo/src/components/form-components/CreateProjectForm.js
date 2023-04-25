@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ProjectContext } from "../../contexts/ProjectContext";
 
-function CreateProjectForm({ createProject }) {
+function CreateProjectForm() {
 	const ctx = useContext(ProjectContext)
 	const initialState = {
 		name: "",
@@ -21,18 +21,6 @@ function CreateProjectForm({ createProject }) {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-
-		//TODO: fetch POST
-		// fetch("/projects", {
-		// 	method: "POST",
-		// 	body: JSON.stringify({ ...formData, phase: parseInt(formData.phase), claps: 0 }),
-		// 	headers: {
-		// 		"content-type": "application/json",
-		// 	},
-		// })
-		// 	.then((res) => res.json())
-		// 	// .then((data) => createProject(data));
-		// 	.then(() => navigate('/projects'))
 		ctx.createProject({ ...formData, phase: parseInt(formData.phase), claps: 0 })
 		.then(() => navigate('/projects'))
 		setFormData(initialState);

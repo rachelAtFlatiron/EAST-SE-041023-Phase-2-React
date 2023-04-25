@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FaPencilAlt, FaTrash } from "react-icons/fa";
 import { ProjectContext } from "../contexts/ProjectContext";
@@ -7,17 +7,11 @@ function ProjectListItem({project}) {
 	const ctx = useContext(ProjectContext);
 	const { id, image, about, name, link, phase, claps } = project;
 
-	//state for clap count, don't want to re-render
-	//const [clapCount, setClapCount] = useState(claps);
-
-	//delete using context
 	const handleDelete = () => {
 		ctx.deleteProject(project.id);
 	};
 
-	//update using context
 	const handleClaps = () => {
-		//console.log(id, { claps: clapCount + 1})
 		ctx.updateProject(id, { claps: claps + 1 });
 	};
 

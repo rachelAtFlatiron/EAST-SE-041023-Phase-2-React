@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { CustomProjectProvider } from "./contexts/ProjectContext";
 
 import Header from "./components/Header";
 import ProjectsPage from "./components/pages/ProjectsPage";
@@ -8,7 +9,6 @@ import About from "./components/pages/About";
 import ProjectDetails from "./components/pages/ProjectDetails";
 import CreateProjectForm from "./components/form-components/CreateProjectForm";
 import EditProjectForm from "./components/form-components/EditProjectForm";
-import { CustomProjectProvider } from "./contexts/ProjectContext";
 
 function App() {
 	const [darkMode, setDarkMode] = useState(true);
