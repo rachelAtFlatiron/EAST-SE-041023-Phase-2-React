@@ -130,6 +130,14 @@ NOTE: ReactDOM.render only works with React up to version 17.  We will be using 
 
 ---
 
+## Lifecycle Terms
+
+- Mount: When a component is first added to the DOM
+- Re-render: When a component updates DOM nodes 
+- Unmount: When a component is removed from the DOM
+
+---
+
 ## `StrictMode`
 
 - runs additional checks and warnings

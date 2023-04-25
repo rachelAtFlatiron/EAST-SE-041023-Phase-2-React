@@ -153,7 +153,7 @@ useEffect(() => {
   fetch("http://localhost:4000/projects")
     .then((res) => res.json())
     .then((projects) => setProjects(projects));
-};
+});
 ```
 
 ---
@@ -171,6 +171,8 @@ useEffect(() => {
   - When the component initially mounts, it will run the cleanup function before the effect function inside `useEffect()`
 
   - After a re-render but before the effect function runs again: if there is any cleanup defined, it will run this first
+  
+  - When the component unmounts
 
 ---
 

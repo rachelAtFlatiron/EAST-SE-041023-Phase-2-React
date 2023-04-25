@@ -70,33 +70,40 @@ Note: it is typical to create a separate file containing your contexts
 
 ---
 
-## The Consumer
+## The Consumer and `useContext()` 
 
 - We call a descendant of the Provider 'The Consumer' when it wants to consume/use the data of the Provider
-We could wrap our component in the  <Consumer /> component especialy if we want to support React < 16.8.0:
+- In any given component nested in the provider you can subscribe to the context:
 
 ```js
-<UserContext.Consumer>
-    {context => {
-        ...
-    }}
-</ UserContext.Consumer>
+import { useContext } from 'react';
+import { UserContext } from '<path>';
+
+function someComponent() {
+    const ctx = useContext(UserContext)
+
+    return(
+        <div>
+            {ctx.value}
+        </div>
+    )
+}
 ```
-
-However we will be using the useContext() hook as it is cleaner 
-
----
-
-## The useContext() hook
-
-...
-
 
 ---
 
 ## Warning
 
 - don't use context right away, see if you can better organize your components to avoid prop drilling (component composition)
+```js
+function SomeComponent(props) {
+  return (
+    <div className={'bla bla bla' + props.value}>
+      {props.children} { /* some series of children we can't hardcode */ }
+    </div>
+  );
+}
+```
 - context is very useful when you're dealing with users
 
 - be careful about updating values that get passed down with context
