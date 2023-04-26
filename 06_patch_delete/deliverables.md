@@ -27,12 +27,16 @@
 
 <br />
 
-#### 4. Add a delete button to `ProjectListItem`
-##### 4a. Create an `onClick` event handler
-##### 4b. When clicked, use a fetch request to delete the project from the database
-##### 4c. Pass this information to `App` and remove the appropriate project from `projects`
+#### 4. For the clap button, update the `onClick` event handler to send a `PATCH` request to save the updated claps in the database
+##### 4a. Send this information to `App` and include it in `projects`
 
 <br />
 
-#### 5. For the clap button, update the `onClick` event handler to send a `PATCH` request to save the updated claps in the database
-##### 5a. Send this information to `App` and include it in `projects`
+#### 5. Add a delete button to `ProjectListItem`
+##### 5a. Create an `onClick` event handler
+##### 5b. When clicked, use a fetch request to delete the project from the database
+##### 5c. Pass this information to `App` and remove the appropriate project from `projects`
+
+<br />
+
+

@@ -143,6 +143,10 @@ We want to use `Link` for navigation in our application. It will ensure that a p
 
 ---
 
+## Demo
+
+---
+
 ## useLocation
 
 - useLocation is a hook that returns information about our current location:
@@ -195,18 +199,16 @@ const { id } = useParams()
 
 ---
 
-## useNavigate
+## redirect
 
-- `useNavigate`in react-router 6 replaces `useHistory` 
-- `useHistory` has been known to have some bugs
-- we use `useNavigate` to programatically go to a specific URL, forward, or backward
+- Use `redirect` to redirect to another route especially in response to data
 
 ```js
-import { useNavigate } from "react-router-dom"
-
-const navigate = useNavigate()
-
+import { redirect } from "react-router-dom"
 fetch(url)
   .then(res => res.json())
-  .then(() => navigate("/some/other/url"))
+  .then(() => redirect("/some/other/url"))
 ```
+
+- Note: You may come across a `useNavigate` hook that replaces react router 5's `useHistory`...it is not reommended to use `useNavigate` for redirects involving fetches
+- `useNavigate` is meant to be used inside your component (i.e. the `jsx`) whereas `redirect` is meant to be used inside normal functions

@@ -28,6 +28,3 @@
 ##### 5a. Use `useContext` to access your name and put it somewhere
 
 <br />
-
-
-* More to come about context and users in Phase 4
