@@ -116,6 +116,12 @@ useEffect(() => {
 
 ---
 
+## React Lifecycle
+
+<img width="900px" src="https://media.licdn.com/dms/image/D5612AQE5Nzfep6s1Ww/article-inline_image-shrink_1500_2232/0/1654106745367?e=1686787200&v=beta&t=-L8G2BVZeprAmOVOE6QHdE_wJFpcpuhxhWZgAIBPpAA"> 
+
+---
+
 ## Fixing App component with useEffect
 
 🛑 Current problem: To load all the projects into the Project showcase application, a user must click on the 'load projects' button

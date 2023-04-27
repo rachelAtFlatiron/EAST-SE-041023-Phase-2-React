@@ -3,16 +3,11 @@
 ## SWBATs:
 
 - [ ] Understand how to create events in React
-- [ ] Review event handler functions, a type of callback function
-<br /><br />
+- [ ] Understand how to define the event handler function
 - [ ] Explain the importance of state
 - [ ] Explain the difference between state and props
-- [ ] Discuss some "gotchas" of working with useState: async code and closures
-<br /><br />
 - [ ] Observe how to use the useState hook
 - [ ] Observe how to use DOM events in React
-- [ ] Create event handler callbacks that manipulate state
-- [ ] Trigger re-renders by setting state
 
 *** 
 

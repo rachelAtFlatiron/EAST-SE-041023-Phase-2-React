@@ -114,29 +114,6 @@ NOTE: ReactDOM.render only works with React up to version 17.  We will be using 
 
 ---
 
-## Virtual DOM
-
-- React creates a virtual representation of the UI that is saved in browser memory
-- ReactDOM is responsible for making sure the real DOM matches the virtual DOM
-- This process abstracts out the manual updating, element creation, etc. from phase 1
-
----
-
-<img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*CqdIWZy0NMPQhYx2rKzo9g.png" width="900px"/>
-
----
-
-<img src="https://react.dev/images/docs/s_thinking-in-react_ui_outline.png" width="900px" />
-
----
-
-## Lifecycle Terms
-
-- Mount: When a component is first added to the DOM
-- Re-render: When a component updates DOM nodes 
-- Unmount: When a component is removed from the DOM
-
----
 
 ## `StrictMode`
 
@@ -171,6 +148,7 @@ The goals for Phase 2:
 
 ---
 
+
 ## Static vs Dynamic 
 
 - Static websites: websites that deliver the same content for all users
@@ -179,6 +157,38 @@ The goals for Phase 2:
 <br />
 
 - React is considered static because we always send the client the same JS, however the data itself can be considered dynamic as it changes based on user interaction
+
+---
+
+## Virtual DOM
+
+- React creates a virtual representation of the UI that is saved in browser memory
+- ReactDOM is responsible for making sure the real DOM matches the virtual DOM
+- This process abstracts out the manual updating, element creation, etc. from phase 1
+
+---
+
+<img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*CqdIWZy0NMPQhYx2rKzo9g.png" width="900px"/>
+
+---
+
+<img src="https://react.dev/images/docs/s_thinking-in-react_ui_outline.png" width="900px" />
+
+---
+
+## Lifecycle Terms
+
+- Mount: When a component is first added to the DOM
+- Re-render/update: When a component updates DOM nodes 
+- Unmount: When a component is removed from the DOM
+
+---
+
+## React Lifecycle
+
+<img width="900px" src="https://media.licdn.com/dms/image/D5612AQE5Nzfep6s1Ww/article-inline_image-shrink_1500_2232/0/1654106745367?e=1686787200&v=beta&t=-L8G2BVZeprAmOVOE6QHdE_wJFpcpuhxhWZgAIBPpAA"> 
+
+
 
 ---
 

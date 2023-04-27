@@ -9,7 +9,7 @@
 
 | Lecture | Notes | Videos | Starter | Solution |
 | ------- | :---: | ------ | ------- | -------- |
-| 1. Components & Props | [Notes](https://docs.google.com/document/d/1Kjsk2vV38gxTpbKmPGh8jO4S4yftbVSpA3wvQ9WqWNg/edit?usp=sharing) | Video | Starter | Solution |
+| 1. Components & Props | [Notes](https://docs.google.com/document/d/12oKrltZfNgTXzInb3cJAikqnV_KGsjqfgaiKcfp8WtM/edit?usp=sharing) | Video | Starter | Solution |
 | 2. State & Events | Notes | Video | Starter | Solution |
 | 3. Information Flow  | Notes | Video | Starter | Solution |     |
 | 4. Forms  | Notes | Video | Starter | Solution |
@@ -20,18 +20,12 @@
 ***
 ## 1: Components and Props
 ### SWBATs:
-- [ ] Review the benefits of React over Vanilla JS
-- [ ] Explain the difference between HTML and JSX 
-- [ ] Explain the ReactDOM.render() method including what arguments it takes and why it's important
-<br /><br />
-- [ ] Explain the difference between declarative and imperative programming
-- [ ] Review the importance of components and modular code
-- [ ] Explain what props are and how to create them
-- [ ] Recognize best practices when writing components and props
-<br /><br />
-- [ ] Review how a component is written
+- [ ] Explain the importance of components
+- [ ] Define a component using JSX
+- [ ] Explain what props are and how to create them 
 - [ ] Recognize destructured props and how to work with them
 - [ ] Observe how to render multiple components from a list
+
 
 ### Lecture Topics:
 - JSX
@@ -45,16 +39,11 @@
 ### SWBATs:
 
 - [ ] Understand how to create events in React
-- [ ] Review event handler functions, a type of callback function
-<br /><br />
+- [ ] Understand how to define the event handler function
 - [ ] Explain the importance of state
 - [ ] Explain the difference between state and props
-- [ ] Discuss some "gotchas" of working with useState: async code and closures
-<br /><br />
 - [ ] Observe how to use the useState hook
 - [ ] Observe how to use DOM events in React
-- [ ] Create event handler callbacks that manipulate state
-- [ ] Trigger re-renders by setting state
 
 ### Lecture Topics:
 - Creating & Updating State
@@ -69,13 +58,11 @@
 - [ ] Define the term “lifting state”
 - [ ] Recognize the pattern for changing state in a parent component from a child component
 - [ ] Explain the role that callback functions play in changing parent state
-- [ ] Observe how we can render reusable components that invokes different callback functions after an event
 - [ ] Recognize destructured props and how to work with them
 
 ### Lecture Topics:
 - Callback functions as props
 - Changing parent state
-- Reusing components w/ different behaviors
 
 ***
 ## 4. React Forms
@@ -98,7 +85,6 @@
 - [ ] Explain what a side effect is
 - [ ] Observe how React manages side effects with the useEffect hook
 - [ ] Observe how to use the useEffect hook to fetch data on page load
-- [ ] Observe how to send a POST request via form
 - [ ] Review changing parent state
 ### Lecture Topics:
 - useEffect

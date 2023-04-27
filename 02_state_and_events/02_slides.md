@@ -96,6 +96,12 @@ This is helpful in the case where we need to introduce additional event handling
 
 ---
 
+## What is React state?
+
+- A built in container for storing information
+
+---
+
 ## Why is state important?
 
 🏹 State is used to track information that changes over time. 
