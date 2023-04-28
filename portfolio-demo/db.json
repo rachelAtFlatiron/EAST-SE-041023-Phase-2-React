@@ -7,7 +7,7 @@
       "phase": 4,
       "link": "https://great-outdoors-guide.netlify.app",
       "image": "https://i.imgur.com/8GnP2Uw.png",
-      "claps": 17
+      "claps": 20
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "phase": 2,
       "link": "https://bookher.netlify.app/new_project",
       "image": "https://i.imgur.com/INs84Uk.png",
-      "claps": 5
+      "claps": 9
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "phase": 2,
       "link": "https://code-bucket.netlify.app",
       "image": "https://i.imgur.com/Hz84TA2.png",
-      "claps": 1
+      "claps": 2
     },
     {
       "id": 11,
@@ -97,7 +97,7 @@
       "phase": 3,
       "link": "https://gamesrx.netlify.app",
       "image": "https://i.imgur.com/Japzh6v.png",
-      "claps": 22
+      "claps": 23
     },
     {
       "name": "Three.js",
@@ -130,7 +130,7 @@
       "name": "Netflix",
       "about": "Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more.",
       "image": "https://miro.medium.com/v2/resize:fit:1400/1*8BtlgpxyjOPaLZXO6pVD0Q.jpeg",
-      "claps": 28,
+      "claps": 29,
       "link": "https://www.netflix.com/",
       "phase": 5,
       "id": 32
@@ -141,8 +141,17 @@
       "phase": 5,
       "link": "https://www.apple.com/",
       "image": "https://www.versionmuseum.com/images/websites/apple-website/apple-website%5E2017%5Ehomepage.png",
-      "claps": 20,
+      "claps": 24,
       "id": 33
+    },
+    {
+      "name": "Wendy Ju Portfolio",
+      "about": "I’m Wendy, a UX designer, a storyteller, and an explorer.\n",
+      "phase": 5,
+      "link": "https://www.wenxinwendyju.com/",
+      "image": "https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/advisor/wp-content/uploads/2022/10/image4.png",
+      "claps": 0,
+      "id": 34
     }
   ]
 }

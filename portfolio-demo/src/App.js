@@ -22,12 +22,13 @@ function App() {
 
 			<CustomProjectProvider>
 				<Routes>
+				<Route path="/projects/:id" element={<ProjectDetails />} />
+					<Route path="/projects/:id/edit" element={<EditProjectForm />} />
 					<Route exact path="/home" element={<Home />} />
 					<Route path="/about" element={<About />} />
 					<Route exact path="/new" element={<CreateProjectForm />} />
 					<Route exact path="/projects" element={<ProjectsPage />} />
-					<Route path="/projects/:id" element={<ProjectDetails />} />
-					<Route path="/projects/:id/edit" element={<EditProjectForm />} />
+					
 					<Route exact path="/" element={<Home />} />
 				</Routes>
 			</CustomProjectProvider>
