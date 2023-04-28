@@ -17,13 +17,15 @@ git remote -v
 
 ```
 git remote add upstream https://github.com/rachelAtFlatiron/EAST-SE-041023-Phase-2-React
+git remote set-url --push upstream DISABLED
 ```
 
-- Whenever you want to fetch changes <strong>from my repo</strong> into your forked repo you can run
-
+- Whenever you want to pull changes <strong>from my repo</strong> into your forked repo you can run
+##### (make sure you are on the right branch)
 ``` 
 git pull upstream <branch-name>
 ```
+
 
 Whenever you want to pull or push changes from your forked repo you can run
 
