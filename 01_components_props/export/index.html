@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>01_components_props</title>
+
+  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+  <meta name="author" content="Hakim El Hattab">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="libs/reveal.js/4.3.1/reset.css">
+  <link rel="stylesheet" href="libs/reveal.js/4.3.1/reveal.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <!-- highlight Theme -->
+  
+  <link rel="stylesheet" href="libs/highlight.js/11.3.1/styles/atom-one-dark-reasonable.min.css">
+  
+	
+		
+	<link rel="stylesheet" href="libs/reveal.js/4.3.1/plugin/chalkboard/style.css">
+	
+	
+	
+  <link rel="stylesheet" href="libs/reveal.js/4.3.1/plugin/customcontrols/style.css">
+  
+	
+
+
+
+  <!-- Revealjs Theme -->
+  
+  <link rel="stylesheet" href="libs/reveal.js/4.3.1/theme/white.css" id="theme">
+  
+  
+
+  <link rel="stylesheet" href="libs/styles/tasklist.css">
+	<link rel="stylesheet" href="libs/styles/iota.css">
+	<link rel="stylesheet" href="libs/styles/layout.css">
+
+
+  <!-- Revealjs Theme -->
+  
+
+   <!-- css list -->
+	
+
+   
+<style>
+  :root {
+     --r-main-font-size: 24px;
+        
+  }
+</style>
+
+
+</head>
+
+<body>
+
+   
+
+  <div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      
+
+
+    
+        <section >
+            
+            <h1>React</h1>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>✅ Objectives</h2>
+<ul>
+<li>Discuss the benefits of React over Vanilla JS</li>
+<li>Explain the importance of components</li>
+<li>Practice writing components</li>
+<li>Define props and how to create them</li>
+<li>Recognize destructured props and how to work with them</li>
+<li>Recognize best practices when writing components and props</li>
+<li>Render multiple components from a list</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>❓ Why React</h2>
+<p>Writing vanilla JavaScript is hard especially when it comes to</p>
+<ul>
+<li>Creating/Updating DOM elements</li>
+<li>Code organization (separation of concerns)</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>🚗 React Roadmap</h2>
+<p>The goals for Phase 2:</p>
+<ul>
+<li>Create a static frontend site with components and props (DOM Manipulation)</li>
+<li>Use state and events to make your site dynamic (Event Handling)</li>
+<li>Add side effects and data fetching to communicate with a server (Network Communication)</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>What We Will Be Building</h2>
+<h2>and a <code>create-react-app</code> Demo</h2>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Static vs Dynamic</h2>
+<ul>
+<li>Static websites: websites that deliver the same content for all users</li>
+<li>Dynamic websites: websites that change files on the web server (which is different from the database server) based on some factor</li>
+</ul>
+<br />
+<ul>
+<li>React is considered static because we always send the client the same JS, however the data itself can be considered dynamic as it changes based on user interaction</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>ReactDOM.render</h2>
+<pre><code class="language-js">ReactDOM.render(&lt;App /&gt;, document.getElementById('root'))
+</code></pre>
+<ul>
+<li>inserts a react element into the DOM</li>
+<li>first arg is the react element we’d like to render to the DOM(JSX)</li>
+<li>the second argument is the DOM node where we want to insert that react element</li>
+</ul>
+<br />
+<ul>
+<li>Note: This is usually contained in <code>index.js</code></li>
+<li>All children of <App /> will also be rendered</li>
+</ul>
+<hr>
+<p>NOTE: ReactDOM.render only works with React up to version 17.  We will be using version 16.  React 18 now uses ReactDOM.createRoot() but it does the same thing as ReactDOM.render().</p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2><code>StrictMode</code></h2>
+<ul>
+<li>runs additional checks and warnings</li>
+<li>does not show up on the DOM</li>
+<li>only runs in development mode</li>
+<li>you can wrap any component in strict mode, create-react-app by default wraps the entire <code>App</code> in strict mode</li>
+</ul>
+<pre><code class="language-js">&lt;React.StrictMode&gt;
+  &lt;App /&gt;
+&lt;React.StrictMode&gt;
+</code></pre>
+<h4><code>StrictMode</code> can…</h4>
+<ul>
+<li>identify unsafe lifecycles and detecting unexpected side effects</li>
+<li>give warnings about deprecated code</li>
+<li><strong>identify bad syntax</strong></li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Components</h2>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Deliverable #1 and <a href="http://draw.io">draw.io</a> component tree</h2>
+<p>Components are the building blocks of React. A component is a <strong>function</strong> that:</p>
+<ul>
+<li>Takes in some raw data (props)</li>
+<li>Returns user interface (JSX)</li>
+<li>Is an independent and reusable bit of code</li>
+<li>Often represent individual and reusable section of the UI</li>
+</ul>
+</p>
+<pre><code class="language-js">const Header = () =&gt; {
+  return (
+    &lt;div&gt;
+      &lt;h3&gt;Hello World&lt;/h3&gt;
+    &lt;/div&gt;
+  );
+};
+
+ReactDOM.render(&lt;Header /&gt;, document.getElementById(&quot;root&quot;));
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*CqdIWZy0NMPQhYx2rKzo9g.png" width="900px"/>
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Declarative vs Imperative</h2>
+<ul>
+<li>Imperative: Describing how to do something (an explicit sequence of events):</li>
+</ul>
+<pre><code class="language-js">const h1 = document.createElement(&quot;h1&quot;);
+h1.id = &quot;main&quot;;
+h1.className = &quot;blue&quot;;
+h1.textContent = &quot;Hello!&quot;;
+</code></pre>
+<ul>
+<li>Declarative: Describe what we want (specifies the result):</li>
+</ul>
+<pre><code class="language-js">const h1 = (
+  &lt;h1 id=&quot;main&quot; className=&quot;blue&quot;&gt;
+    Hello from JSX!
+  &lt;/h1&gt;
+);
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>JS vs. JSX</h2>
+<p>Under the hood, React apps use a tool called Babel, a Javascript compiler, to transpile the JSX syntax to valid JS</p>
+<ul>
+<li>we write JSX</li>
+<li>babel transpiles JSX into valid JS</li>
+<li>that transpiled code is what actually runs in the browser</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <p>The code you write</p>
+<pre><code class="language-js">const h1 = (
+  &lt;h1 id=&quot;main&quot; className=&quot;blue&quot;&gt;
+    Hello from JSX!
+  &lt;/h1&gt;
+);
+ 
+</code></pre>
+<p>The code the browser runs</p>
+<pre><code class="language-js">&quot;use strict&quot;;
+var h1 =
+  /*#__PURE__*/
+  React.createElement(
+    &quot;h1&quot;,
+    { id: &quot;main&quot;, className: &quot;blue&quot; },
+    &quot;Hello from JSX!&quot;
+  );
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Component Gotchas</h2>
+<p>This is okay:</p>
+<pre><code class="language-js">function Card() {
+  return (
+    &lt;div id=&quot;card1&quot; className=&quot;card&quot;&gt;
+      &lt;h1&gt;hi&lt;/h1&gt;
+      &lt;p&gt;wassup?&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<p>This is NOT okay:</p>
+<pre><code class="language-js">function card() {
+  return (
+    &lt;h1&gt;hi&lt;/h1&gt;
+    &lt;p&gt;wassup?&lt;/p&gt;
+  )
+}
+</code></pre>
+<ul>
+<li>Component name needs to be capitalized</li>
+<li>Components can only return one element</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Virtual DOM</h2>
+<ul>
+<li>React creates a virtual representation of the UI that is saved in browser memory</li>
+<li>ReactDOM is responsible for making sure the real DOM matches the virtual DOM</li>
+<li>This process abstracts out the manual updating, element creation, etc. from phase 1</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Break</h2>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Props</h2>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>🎩 Props!</h2>
+<p>When you create components, one way to make them dynamic and reusable is by passing in props. For example, if we wanted to create several cards on our page using a Card component, we could do so like this:</p>
+<pre><code class="language-js">function Card(props) {
+  return (
+    &lt;div id=&quot;card1&quot; className=&quot;card&quot;&gt;
+      &lt;h1&gt;{props.greeting}&lt;/h1&gt;
+      &lt;p&gt;{props.subGreeting}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+// Inside another component
+
+return (
+  &lt;div&gt;
+    &lt;Card greeting=&quot;hi&quot; subGreeting=&quot;hello&quot; /&gt;
+    &lt;Card greeting=&quot;salut&quot; subGreeting=&quot;bonjour&quot; /&gt;
+  &lt;/div&gt;
+);
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>🎩 Props Continued</h2>
+<p>The props argument in our Card component defines an object that React will pass to our function when it is called, and it will use whatever attributes we add to our JSX component as key-value pairs on that props object.</p>
+<p>For example, if we were to add a console.log in the Card component above, we’d end up seeing this object:</p>
+<pre><code class="language-js">function Card(props) {
+  console.log(props); // =&gt; { greeting: &quot;hi&quot;, subGreeting: &quot;hello&quot; }
+
+  return (
+    &lt;div id=&quot;card1&quot; className=&quot;card&quot;&gt;
+      &lt;h1&gt;{props.greeting}&lt;/h1&gt;
+      &lt;p&gt;{props.subGreeting}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Deliverable 2-4</h2>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Component Iteration</h2>
+<p>We can expand on this by translating using <code>forEach</code></p>
+<pre><code class="language-js">  //vanilla js
+  cards.forEach(card =&gt; {
+    let h1 = document.createElement('h1')
+    h1.textContent = card.title
+    parentNode.append(h1)
+  })
+</code></pre>
+<pre><code class="language-js">  //react
+  return (
+    &lt;div&gt;
+      {cards.forEach(card =&gt; &lt;CardComponent cardProp={card} /&gt;)}
+    &lt;/div&gt;
+  )
+</code></pre>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>💡 React Philosophy</h2>
+<ul>
+<li>Use declarative syntax (JSX)</li>
+<li>Make it easier to work with the DOM</li>
+<li>Clearer connection between the code we write and what is displayed in the browser</li>
+<li>Use components to break down complex UI into smaller pieces which creates a better separation of concerns</li>
+<li>Easier to maintain</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Project Showcase Wireframe and Updating <a href="http://Draw.io">Draw.io</a> with Props</h2>
+<p><a href="https://www.figma.com/file/EiEpomnCYh7AGbhqc2p3pk/Phase-2-Portfolio-Demo?node-id=0%3A1&amp;t=T9ErK0aPEaRDSu0k-1">Figma Wireframes</a></p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Let’s make a treeeeee 🌲</h2>
+<img src="https://cdn.shopify.com/s/files/1/0070/7032/files/skinnydip-london-faq.png?format=webp&v=1635372279" width="900px" />
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Wireframes</h2>
+<p>Tools:</p>
+<ul>
+<li><a href="https://miro.com/">Miro</a></li>
+<li><a href="https://balsamiq.com/">Balsamiq</a></li>
+<li><a href="https://www.figma.com/wireframe-tool">Figma</a></li>
+<li><a href="https://www.lucidchart.com/pages/examples/wireframe_software">LucidChart</a></li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h2>Components Demo</h2>
+
+            </section>
+    
+
+
+    </div>
+
+
+  </div>
+
+  <div class="line top"></div>
+  <div class="line bottom"></div>
+  <div class="line left"></div>
+  <div class="line right"></div>
+
+  <script src="libs/reveal.js/4.3.1/reveal.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/notes/notes.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/markdown/markdown.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/highlight/highlight.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/math/math.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/fullscreen/plugin.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/animate/plugin.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/animate/svg.min.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/plugin.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/Chart.min.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/d3/d3.v3.min.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/d3.patch.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/d3/queue.v1.min.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/d3/topojson.v1.min.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/anything/function-plot.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/customcontrols/plugin.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/embed-tweet/plugin.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/chart/chart.min.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/chart/plugin.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/verticator/verticator.js"></script>
+
+<script src="libs/reveal.js/4.3.1/plugin/zoom/zoom.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/search/search.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/menu/menu.js"></script>
+<script src="libs/reveal.js/4.3.1/plugin/chalkboard/plugin.js"></script>
+
+<!--	<script src="libs/reveal.js/4.3.1/plugin/audio-slideshow/plugin.js"></script>  -->
+<!--	<script src="libs/reveal.js/4.3.1/plugin/audio-slideshow/recorder.js"></script>-->
+<!--	<script src="libs/reveal.js/4.3.1/plugin/audio-slideshow/RecordRTC.js"></script>-->
+
+  
+
+<script>
+  const printPlugins = [
+      RevealNotes,
+      RevealHighlight,
+      RevealMath.MathJax3,
+      RevealAnimate,
+      RevealChalkboard, 
+			RevealEmbedTweet,
+			RevealChart,
+		];
+
+		const plugins =  [...printPlugins,
+		RevealZoom, 
+		RevealSearch, 
+				RevealMarkdown, 
+				RevealMenu, 
+				RevealFullscreen,
+				RevealAnything,
+				//RevealAudioSlideshow,
+				//RevealAudioRecorder,
+				RevealCustomControls, 
+				// poll
+				// question
+				// seminar
+				Verticator 
+				 ]
+
+
+		// Also available as an ES module, see:
+		// https://revealjs.com/initialization/
+		Reveal.initialize({
+			controls: true,
+      controlsTutorial: true,
+      controlsLayout: 'bottom-right',
+      controlsBackArrows: 'faded',
+      progress: true,
+      slideNumber: false,
+      //#showSlideNumber "all" "print" "speaker"
+      hash: true, //# hash: false,
+      //# respondToHashChanges: true,
+      //# history: false,
+      keyboard: true,
+      //#keyboardCondition: null,
+      overview: true,
+      center: true,
+      touch: false,
+      loop: false,
+      rtl: false,
+      //#navigationMode: 'default', linear grid
+      shuffle: false,
+      fragments: true,
+      fragmentInURL: false,
+      embedded: false,
+      help: true,
+      //#pause: true
+      showNotes: false,
+      autoPlayMedia: false, // TODO fix this to a nullable value
+      //#preloadIframes: null. true false
+      //#autoAnimate: true
+      //#autoAnimateMatcher: null,
+      //#autoAnimateEasing: 'ease',
+      //autoAnimateDuration: 1.0,
+      //#autoAnimateUnmatched: true
+      //#autoAnimateStyles: []
+      autoSlide: 0, // TODO fix this to a falseable value
+      autoSlideStoppable: true,
+      autoSlideMethod: '0',
+      defaultTiming: 120,
+      mouseWheel: false,
+      //#previewLinks: false
+      //#postMessage: true, // TODO : this can cause issues with the vscode api ???
+      //#postMessageEvents: false,
+      //#focusBodyOnPageVisibilityChange: true,
+      transition: 'slide',
+      transitionSpeed: 'default',
+      backgroundTransition: 'fade',
+      //#pdfMaxPagesPerSlide: Number.POSITIVE_INFINITY,
+      //#pdfSeparateFragments: true,
+      //#pdfPageHeightOffset: -1,
+      viewDistance: 3,
+      //#mobileViewDistance: 2,
+      display: 'block',
+      //#hideInactiveCursor: true,
+      //#hideCursorTime: 5000
+
+      // Parallax Background
+      parallaxBackgroundImage: '',
+      parallaxBackgroundSize: '',
+      parallaxBackgroundHorizontal: 0,
+      parallaxBackgroundVertical: 0,
+
+      //Presentation Size
+      width: 960,
+			height: 700,
+			margin: 0.01,
+      minScale: 0.2,
+      maxScale: 2,
+      disableLayout: false,
+
+      audio: {
+        prefix: 'audio/', // audio files are stored in the "audio" folder
+        suffix: '.ogg', // audio files have the ".ogg" ending
+        textToSpeechURL: null, // the URL to the text to speech converter
+        defaultNotes: false, // use slide notes as default for the text to speech converter
+        defaultText: false, // use slide text as default for the text to speech converter
+        advance: 0, // advance to next slide after given time in milliseconds after audio has played, use negative value to not advance
+        autoplay: false, // automatically start slideshow
+        defaultDuration: 5, // default duration in seconds if no audio is available
+        defaultAudios: true, // try to play audios with names such as audio/1.2.ogg
+        playerOpacity: 0.05, // opacity value of audio player if unfocused
+        playerStyle: 'position: fixed; bottom: 4px; left: 25%; width: 50%; height:75px; z-index: 33;', // style used for container of audio controls
+        startAtFragment: false, // when moving to a slide, start at the current fragment or at the start of the slide
+      },
+      
+      chalkboard: { // font-awesome.min.css must be available
+        //src: "chalkboard/chalkboard.json",
+        storage: "chalkboard-demo",
+      },
+      
+			customcontrols: {
+					controls: [
+      						{
+						  id: 'toggle-overview',
+						  title: 'Toggle overview (O)',
+						  icon: '<i class="fa fa-th"></i>',
+						  action: 'Reveal.toggleOverview();'
+						}
+						,
+      {
+        icon: '<i class="fa fa-pen-square"></i>',
+        title: 'Toggle chalkboard (B)',
+        action: 'RevealChalkboard.toggleChalkboard();'
+      },
+      {
+        icon: '<i class="fa fa-pen"></i>',
+        title: 'Toggle notes canvas (C)',
+        action: 'RevealChalkboard.toggleNotesCanvas();'
+      }
+      
+				]
+			},
+			chart: {
+					defaults: { 
+						color: 'lightgray', // color of labels
+						scale: { 
+							beginAtZero: true, 
+							ticks: { stepSize: 1 },
+							grid: { color: "lightgray" } , // color of grid lines
+						},
+					},
+					line: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ], "borderDash": [ [5,10], [0,0] ] }, 
+					bar: { backgroundColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+					pie: { backgroundColor: [ ["rgba(0,0,0,.8)" , "rgba(220,20,20,.8)", "rgba(20,220,20,.8)", "rgba(220,220,20,.8)", "rgba(20,20,220,.8)"] ]},
+					radar: { borderColor: [ "rgba(20,220,220,.8)" , "rgba(220,120,120,.8)", "rgba(20,120,220,.8)" ]}, 
+			},
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+				},
+				anything: [ 
+				{
+		className: "plot",
+		defaults: {width:500, height: 500, grid:true},
+		initialize: (function(container, options){ options.target = "#"+container.id; functionPlot(options) })
+	 },
+	 {
+		className: "chart",  
+		initialize: (function(container, options){ container.chart = new Chart(container.getContext("2d"), options);  })
+	 },
+	 {
+		className: "anything",
+		initialize: (function(container, options){ if (options && options.initialize) { options.initialize(container)} })
+	 },
+					],
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: (window.location.search.match(/print-pdf/gi) ? printPlugins : plugins ) 
+		});
+			
+
+
+	    // Change chalkboard theme : 
+		function changeTheme(input) {
+			var config = {};
+			config.theme = input.value;
+			Reveal.getPlugin("RevealChalkboard").configure(config);
+			input.blur();
+		}
+
+		// // Handle the message inside the webview
+        // window.addEventListener('message', event => {
+
+        //     const message = event.data; // The JSON data our extension sent
+
+        //     switch (message.command) {
+        //         case 'refactor':
+        //             Reveal.toggleHelp();
+        //     }
+        // });
+
+		if (window.location.search.match(/print-pdf-now/gi)) {
+      		setTimeout(() => {
+				window.print();
+			  }, 2500);
+			
+    }
+</script>
+
+</body>
+
+</html>

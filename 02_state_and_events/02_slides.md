@@ -54,7 +54,7 @@ in the example above...
 - `onClick={}` represents the event 
 - `() => console.log("clicked!")` is the callback function for the `onClick` event
 
-NOTE: Events can only be attached to JSX elements.  There is no equivalent of 'addEventListener' and you cannot query for a JSX element. 
+(There is a Draw.io color coded diagram)
 
 ---
 
@@ -90,9 +90,12 @@ This is helpful in the case where we need to introduce additional event handling
 - Synthetic events ensure that you can use the event object in the same way regardless of browser or machine.
 
 
+🛑 NOTE: Events can only be attached to JSX elements.  There is no equivalent of 'addEventListener' and you cannot query for a JSX element. 
+
+
 ---
 
-## Demo: Events
+## Demo: Deliverable #1: Dark Mode
 
 ---
 
@@ -110,21 +113,9 @@ This is helpful in the case where we need to introduce additional event handling
 
 🏹 Values stored in state are meant to change, especially in response to user behaviors (through events and interactions).
 
-🏹 We can do conditional rendering based on state values. Based on state we can determine what JSX or logic to execute. This way, changes in state eventually cause changes to the DOM.
-
----
-
-## React Flow
-
-<img width="500px" src="https://www.exploringreact.com/wp-content/uploads/2020/11/unidirectional.png" />
+🏹 We can do conditional rendering based on state values. Based on state we can determine what JSX or logic to execute. <strong>This way, changes in state eventually cause changes to the DOM.</strong>
 
 🏹 To work with state in a functional component, we use the `useState` hook
-
----
-
-## React Lifecycle
-
-<img width="900px" src="https://media.licdn.com/dms/image/D5612AQE5Nzfep6s1Ww/article-inline_image-shrink_1500_2232/0/1654106745367?e=1686787200&v=beta&t=-L8G2BVZeprAmOVOE6QHdE_wJFpcpuhxhWZgAIBPpAA"> 
 
 ---
 
@@ -136,8 +127,6 @@ This is helpful in the case where we need to introduce additional event handling
 
 - setter function: a function that will update the value of the state when invoked
 
-React recommends using array destructuring:
-
 ```js
 const [stateVariable, setStateVariable] = useState(someVal);
 ```
@@ -146,7 +135,7 @@ const [stateVariable, setStateVariable] = useState(someVal);
 
 ## Setting State
 
-- To update a state variable, we use its setter function:
+- To update a state variable, we <strong>ONLY</strong> use its setter function:
 
 ```js
 setStateVariable("newValue")
@@ -156,6 +145,30 @@ Calling the setter function does two things:
 1. It updates the state variable to some new value
 
 2. It causes our component to re-render and update the DOM
+
+---
+
+## Deliverable #2: 👏
+
+---
+
+## React Flow
+
+<img width="800px" src="https://www.exploringreact.com/wp-content/uploads/2020/11/unidirectional.png" />
+
+---
+
+## React Lifecycle
+
+<img width="700px" src="https://media.licdn.com/dms/image/D5612AQE5Nzfep6s1Ww/article-inline_image-shrink_1500_2232/0/1654106745367?e=1686787200&v=beta&t=-L8G2BVZeprAmOVOE6QHdE_wJFpcpuhxhWZgAIBPpAA"> 
+
+---
+
+## React Lifecycle
+
+- Mount: When a component is first added to the DOM
+- Re-render/update: When a component updates DOM nodes 
+- Unmount: When a component is removed from the DOM
 
 ---
 
@@ -184,15 +197,6 @@ const myCallback = () => setStateVariable("newValue");
 
 ---
 
-## 🤗 Reconciliation 🤗
-
-- When setState is called, React will re-render that component and all of its children
-- This is an expensive operation, so React optimizes by running a diffing algorithm to decide which components actually need to trigger committed changes to the DOM.
-- This diffing process is called [reconciliation](https://reactwithhooks.netlify.app/docs/reconciliation.html)
-- During reconciliation, React compares its own picture of the current state of the DOM tree with what it should look like after the change. Using this diff, the minimal DOM manipulation necessary is committed to reconcile the current DOM tree with what it should be after the change to state.
-
----
-
 ## 🛑 DO NOT DIRECTLY UPDATE STATE
 
 - One of the choices made in the reconciliation process is to only commit to updating a component in the DOM if one of its nodes or property values has changed. If all nodes (types of React elements) and their props and values are the same, React will leave that component unchanged from the previous render.
@@ -212,6 +216,10 @@ setterFuncForArray(prevArrayVariable => [...prevArrayVariable, newValue])
 
 ---
 
+## Deliverable #3: Filter by Phase
+
+---
+
 ## 💡 Conclusion
 
 Events and state are both important and can work together to allow the DOM to reflect a users interactions and activities by:
@@ -222,6 +230,3 @@ Events and state are both important and can work together to allow the DOM to re
 
 3. State change forces a re-render that will cause DOM manipulation and reflect the changes on the interface
 
----
-
-## Demo: State

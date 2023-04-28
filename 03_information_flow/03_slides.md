@@ -17,6 +17,11 @@ title: '03_information_flow'
 
 ---
 
+## Before we get started
+## Deliverable #1: Fetch 
+
+---
+
 ## Lifting State Up ⬆️ 
 
 
@@ -33,7 +38,11 @@ title: '03_information_flow'
 
 ---
 
-## Demo: DrawIO
+## Demo: Inverse data flow in DrawIO
+
+---
+
+## Deliverable #2: Dark Mode with Inverse Data Flow
 
 ---
 
@@ -53,6 +62,14 @@ title: '03_information_flow'
 
 ---
 
+## (You Do?) Deliverable #3: Phase Filter
+
+---
+
+## Update Our React Tree
+
+---
+
 ## 💡 Conclusion: 
 
 Lifting state up allows us to share data across different components without having to redefine that state where it is needed. The lowest common parent component is the best place to create the state and the process of sharing the data is done through the passing of props.
@@ -61,6 +78,3 @@ Because this data is now created elsewhere, we also have to be mindful of how th
 
 This means creating a callback function in the parent component that will be responsible for updating the state and passing it down as a prop to the child component with the behavior.
 
----
-
-## Demo: Lifting State

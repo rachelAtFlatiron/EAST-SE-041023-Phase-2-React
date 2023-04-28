@@ -158,16 +158,7 @@ The state of `products` is defined inside of the parent component `App` and the 
 ## Demo: Inverse Flow
 
 ---
-
-## 🤗 Reconciliation 🤗
-
-- When setState is called, React will re-render that component and all of its children
-- This is an expensive operation, so React optimizes by running a diffing algorithm to decide which components actually need to trigger committed changes to the DOM.
-- This diffing process is called [reconciliation](https://reactwithhooks.netlify.app/docs/reconciliation.html)
-- During reconciliation, React compares its own picture of the current state of the DOM tree with what it should look like after the change. Using this diff, the minimal DOM manipulation necessary is committed to reconcile the current DOM tree with what it should be after the change to state.
-
----
-
+s
 ## Why we don't mutate state directly
 
 - One of the choices made in the reconciliation process is to only commit to updating a component in the DOM if one of its nodes or property values has changed. If all nodes (types of React elements) and their props and values are the same, React will leave that component unchanged from the previous render.
