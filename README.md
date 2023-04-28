@@ -9,7 +9,7 @@
 
 | Lecture | Notes | Videos | Starter | Solution |
 | ------- | :---: | ------ | ------- | -------- |
-| 1. Components & Props | [Notes](https://docs.google.com/document/d/12oKrltZfNgTXzInb3cJAikqnV_KGsjqfgaiKcfp8WtM/edit?usp=sharing) | Video | Starter | Solution |
+| 1. Components & Props | [Notes](https://docs.google.com/document/d/12oKrltZfNgTXzInb3cJAikqnV_KGsjqfgaiKcfp8WtM/edit?usp=sharing) | Video | [Starter](https://github.com/rachelAtFlatiron/EAST-SE-041023-Phase-2-React/tree/01_starter) | Solution |
 | 2. State & Events | Notes | Video | Starter | Solution |
 | 3. Information Flow  | Notes | Video | Starter | Solution |     |
 | 4. Forms  | Notes | Video | Starter | Solution |
