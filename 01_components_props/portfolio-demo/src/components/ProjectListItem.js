@@ -1,8 +1,9 @@
 import React from "react";
 
+// function ProjectListItem(props) {
 function ProjectListItem({ project }) {
     /* deliverables 3 and 4*/
-	let { name, about, image, claps, link, phase } = project;
+	let { name, about, image, claps, link, phase } = project; //props.project
 	return (
 		<li className="card">
 			<figure className="image">
