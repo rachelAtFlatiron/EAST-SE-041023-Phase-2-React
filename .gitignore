@@ -8,6 +8,6 @@ outline.md
 /*/package-lock.json
 /*/.vscode
 ./*/export/
-/*/export/*
+/*/export
 myreadme.md
 .DS_Store
