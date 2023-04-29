@@ -12,13 +12,11 @@ output:
 
 ## ✅ Objectives 
 
-- Discuss the benefits of React over Vanilla JS
 - Explain the importance of components
-- Practice writing components
-- Define props and how to create them
+- Define a component using JSX
+- Explain what props are and how to create them
 - Recognize destructured props and how to work with them
-- Recognize best practices when writing components and props
-- Render multiple components from a list
+- Observe how to render multiple components from a list
 
 ---
 

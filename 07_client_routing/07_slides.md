@@ -10,10 +10,9 @@ title: "07_client_routing"
 
 ## ✅ Objectives 
 
-- Create a multi-page SPA
-- Utilize the most common react-router components to build a SPA: BrowserRouter, Routes, Route, Link, and NavLink
-- Use custom hooks like useNavigate and useParams to access the state of the router
-- Create dynamic routes and use params
+- Review the difference between server-side and client-side routing
+- Observe a refactor to include client-side routing using React Router V6
+- Observe how to use the react-router-dom hook useParams
 
 ---
 
