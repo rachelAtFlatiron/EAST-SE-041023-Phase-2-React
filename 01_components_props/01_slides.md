@@ -244,6 +244,15 @@ function card() {
 When you create components, one way to make them dynamic and reusable is by passing in props. For example, if we wanted to create several cards on our page using a Card component, we could do so like this:
 
 ```js
+function CardParent(){
+  return (
+    <div>
+      <Card greeting="hi" subGreeting="hello" />
+      <Card greeting="salut" subGreeting="bonjour" />
+    </div>
+  );
+}
+
 function Card(props) {
   return (
     <div id="card1" className="card">
@@ -252,15 +261,6 @@ function Card(props) {
     </div>
   );
 }
-
-// Inside another component
-
-return (
-  <div>
-    <Card greeting="hi" subGreeting="hello" />
-    <Card greeting="salut" subGreeting="bonjour" />
-  </div>
-);
 ```
 
 ---
@@ -283,6 +283,27 @@ function Card(props) {
   );
 }
 ```
+
+---
+
+## 🎩 Props Continued 
+
+We can also directly destructure the props argument when it gets passed into `Card`
+
+```js
+function Card({greeting, subGreeting}) {
+  console.log(greeting, subGreeting)
+
+  return (
+    <div id="card1" className="card">
+      <h1>{greeting}</h1>
+      <p>{subGreeting}</p>
+    </div>
+  );
+}
+```
+
+- This allows us to keep better track of what props should be passed where.
 
 ---
 
