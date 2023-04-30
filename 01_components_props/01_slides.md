@@ -69,11 +69,11 @@ ReactDOM.render(<App />, document.getElementById('root'))
 <br />
 
 - Note: This is usually contained in `index.js`
-- All children of <App /> will also be rendered
+- All children of `<App />` will also be rendered
 
 --- 
 
-NOTE: ReactDOM.render only works with React up to version 17.  We will be using version 16.  React 18 now uses ReactDOM.createRoot() but it does the same thing as ReactDOM.render().
+NOTE: ReactDOM.render only works with React up to version 17.  React 18 now uses ReactDOM.createRoot() but it does the same thing as ReactDOM.render().
 
 ---
 
@@ -159,7 +159,7 @@ const h1 = (
 ## JS vs. JSX 
 Under the hood, React apps use a tool called Babel, a Javascript compiler, to transpile the JSX syntax to valid JS
 
-- we write JSX
+- we write JSX (JavaScript XML)
 - babel transpiles JSX into valid JS
 - that transpiled code is what actually runs in the browser
 
