@@ -1,12 +1,21 @@
-import React from "react";
+import { useState } from "react";
 
 function ProjectListItem({ project }) {
+
 	let { name, about, image, claps, link, phase } = project;
+	
+	const [projectClaps, setProjectClaps] = useState(claps)
+
+	function updateProjectClaps () {
+		setProjectClaps( prev => prev + 1)
+	}
+	
 	return (
 		<li className="card">
 			<figure className="image">
 				<img src={image} alt={name} />
-				<button className="claps">👏{claps}</button>
+				{/* <button onClick={() => updateProjectClaps()} className="claps">👏{projectClaps}</button> */}
+				<button onClick={() => setProjectClaps(prev => prev+1)} className="claps">👏{projectClaps}</button>
 			</figure>
 			<section className="details">
 				<h4>{name}</h4>
