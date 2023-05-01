@@ -17,8 +17,9 @@ function App() {
 
     
     <div className={darkMode ? 'App' : 'App light'}>
-      {/* <button onClick={() => updateDarkMode()}>darkmode</button> */}
+      
       <Header  />
+      <button onClick={() => updateDarkMode()}>{darkMode ? 'Light Mode' : 'Dark Mode'}</button>
       <ProjectForm />
       <ProjectList projects = {projects}/>
     </div>
