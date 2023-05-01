@@ -6,7 +6,6 @@ import projects from './projects'
 
 function App() {
   return (
-    // Deliverables 1a, 1b, 1c
     <div className="App">
       <Header />
       <ProjectForm />
