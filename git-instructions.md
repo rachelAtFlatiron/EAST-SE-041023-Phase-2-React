@@ -1,38 +1,45 @@
 # Git Instructions
 
-- Fork into your own repo
+To get starter code...
 
-## I will be making changes to the original repo therefore...
+### 1. Navigate to your phase repo in your github account
+### 2. Navigate to all your branches
+<br />
 
-- You need a way to pull changes from the original repo.  In order to do this you will have to add a new remote repository.
+<img src='./assets/branches.png' width="600" />
 
-## Adding a new remote repository 
+### 3. Click on 'new branch'
 
-- Right now you have one remote repository connected to the forked repo on your account called `origin`.  You can check this by running
-```
-git remote -v
-```
+<br />
+<img src="./assets/new-branch.png" width="600" />
 
-- You can also create a connection between your repo and the original repo by setting a new remote.  We will call this new remote `upstream`.
+### 4. Fill out the form
+<img src="./assets/source-branch.png" width="600" />
+<br />
 
-```
-git remote add upstream https://github.com/rachelAtFlatiron/EAST-SE-041023-Phase-2-React
-git remote set-url --push upstream DISABLED
-```
+- red: your branch name
+- blue: my repo (rachelAtFlatiron/EAST...)
+- green: the branch from my repo that you want
 
-- Whenever you want to pull changes <strong>from my repo</strong> into your forked repo you can run
-##### (make sure you are on the right branch)
-``` 
-git pull upstream <branch-name>
-```
+EX.
 
+- red: my_02_starter
+- blue: rachelAtFlatiron/EAST-SE-041023-Phase-2-React
+- green: 02_starter
 
-Whenever you want to pull or push changes from your forked repo you can run
+<br />
 
-```
-git pull origin <branch-name>
-```
+### 5. In terminal navigate to the appropriate folder
 
-```
-get push origin <branch-name>
-```
+### 6. Run `git fetch` to get all new branches
+
+### 7. Run `git checkout <branch-name>` to switch to the new branch
+
+Ex. 
+<br />
+
+> `git fetch`
+<br />
+
+> `git checkout my_02_starter`
+
