@@ -17,6 +17,8 @@ title: '02_state_and_events'
 - Observe how to use the useState hook
 - Observe how to use DOM events in React
 
+<aside class="notes">heyyy notes</aside>
+
 ---
 
 ## Events in JS
@@ -81,17 +83,26 @@ const Counter = () => {
 
 This is helpful in the case where we need to introduce additional event handling logic. We can do so without cluttering our JSX.
 
+<aside class="notes">
+- This goes back to the concept of all functionality fro a given component being encapsulated inside that components (function).  
+- Also notice that the JSX is only inside the return statement and everything else is outside the return.
+- React event listeners will always be in camel case
+
 ---
 
 ## Synthetic Events
 
 - React passes "synthetic event objects" to our event handlers rather than the native event object created by the browser.
-- This means React events still have `preventDefault()`!!!!
+- This means React events still have `preventDefault()` and `stopPropagation()` !!!!
 - Synthetic events ensure that you can use the event object in the same way regardless of browser or machine.
 
 
 🛑 NOTE: Events can only be attached to JSX elements.  There is no equivalent of 'addEventListener' and you cannot query for a JSX element. 
 
+<aside class="notes">
+- synthetic events are wrappers for native events
+- they also make events cross browser compatible
+</aside>
 
 ---
 
@@ -101,21 +112,22 @@ This is helpful in the case where we need to introduce additional event handling
 
 ## What is React state?
 
-- A built in container for storing information
+- A built in container for storing information that is internal to a component.
+- State is used to track information that changes over time. 
 
 ---
 
 ## Why is state important?
-
-🏹 State is used to track information that changes over time. 
-
-🏹 Props are passed from the parent component, state is internal to a component. 
 
 🏹 Values stored in state are meant to change, especially in response to user behaviors (through events and interactions).
 
 🏹 We can do conditional rendering based on state values. Based on state we can determine what JSX or logic to execute. <strong>This way, changes in state eventually cause changes to the DOM.</strong>
 
 🏹 To work with state in a functional component, we use the `useState` hook
+
+
+🛑 Props are passed from the parent component, state is internal to a component. 
+
 
 ---
 
@@ -186,6 +198,8 @@ Always wrap it in a callback function and pass the callback function as a prop i
 const myCallback = () => setStateVariable("newValue");
 ```
 
+<aside class="notes">directly passing down the setState function might interrupt the react lifecycle</aside>
+
 ---
 
 ## 🛑 YOUR COMPONENTS' LOGIC WILL RUN WITH THE INITIAL STATE
@@ -199,8 +213,6 @@ const myCallback = () => setStateVariable("newValue");
 
 ## 🛑 DO NOT DIRECTLY UPDATE STATE
 
-- One of the choices made in the reconciliation process is to only commit to updating a component in the DOM if one of its nodes or property values has changed. If all nodes (types of React elements) and their props and values are the same, React will leave that component unchanged from the previous render.
-
 If an object or array is mutated directly and then set as the new value for state **React sees the same object in state as the previous render and leaves the DOM untouched**
 
 ```js
@@ -209,6 +221,12 @@ setterFunc(setterVariable) //BAD
 
 //GOOD
 setterFunc(prevSetterVariable => prevSetterVariable + "new string") 
+
+<aside class="notes">
+- if you need to rely on the current version of state to create the new state we have to call in a callback function
+- this is because setState is a async 
+- react also batches async events to make things faster (multiple state updates are bundled into one update/rerender)
+</aside>
 
 //instead of directly mutating arrays use the spread operator, filter, or map
 setterFuncForArray(prevArrayVariable => [...prevArrayVariable, newValue])
