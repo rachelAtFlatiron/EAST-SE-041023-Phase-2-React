@@ -38,6 +38,17 @@
 
 #### 3. Implement a filter by project phase feature inside the `ProjectList` component:
 
+```js
+<div className="filter">
+    <button>All</button>
+    <button>Phase 5</button>
+    <button>Phase 4</button>
+    <button>Phase 3</button>
+    <button>Phase 2</button>
+    <button>Phase 1</button>
+</div>
+```
+
 ##### 3a. Create buttons in `ProjectList.js` that represent each phase.
 ##### 3b. Initialize state `phase` set to 0
 

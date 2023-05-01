@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <button>Dark Mode</button>
       <ProjectForm />
       <ProjectList projects = {projects}/>
     </div>

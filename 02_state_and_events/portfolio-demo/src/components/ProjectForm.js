@@ -1,7 +1,7 @@
 function ProjectForm() {
   return (
     <section>
-      <h1>Project Form</h1>
+      <h2>Project Form</h2>
     </section>
   )
 }
