@@ -2,8 +2,10 @@ import { useState } from "react";
 
 function ProjectListItem({ project }) {
 
+	
 	let { name, about, image, claps, link, phase } = project;
 	
+	//ask what projectClaps shoud be set to
 	const [projectClaps, setProjectClaps] = useState(claps)
 
 	function updateProjectClaps () {

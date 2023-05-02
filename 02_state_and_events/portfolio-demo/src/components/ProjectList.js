@@ -3,12 +3,17 @@ import ProjectListItem from "./ProjectListItem";
 
 function ProjectList({ projects }) {
 
+	//ask what would be a good starting value
 	const [phase, setPhase] = useState(0)
 
 	const handleClick = (num) => {
 		setPhase(num)
 	}
 
+	//every time phase gets updated
+	//code of ProjectList will re-run
+	//thus every time phase gets updated filteredProjects will update
+	//without needing to put filteredProjects in state
 	const filteredProjects = projects.filter(el => {
 		return (el.phase === phase || phase === 0)
 	})
@@ -23,6 +28,12 @@ function ProjectList({ projects }) {
 				<button onClick={() => handleClick(3)}>Phase 3</button>
 				<button onClick={() => handleClick(2)}>Phase 2</button>
 				<button onClick={() => handleClick(1)}>Phase 1</button>
+				{/* can't use for loop, JSX always expects an object to be displayed */}
+				{/* {
+					[1, 2, 3, 4, 5].map(el => {
+						return <button onClick={() => handleClick(el)}>Phase {el}</button>
+					})
+				} */}
 			</div>
 			<ul className="cards">
 				{filteredProjects.map((project) => (

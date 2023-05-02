@@ -1,29 +1,34 @@
-import { useState } from 'react' //import usestate
+import { useState } from "react"; //import usestate
 import Header from "./components/Header";
-import ProjectList from "./components/ProjectList"
-import ProjectForm from "./components/ProjectForm"
-import projects from './projects.js'
-
+import ProjectList from "./components/ProjectList";
+import ProjectForm from "./components/ProjectForm";
+import projects from "./projects.js";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true)
-  
-      
-  function updateDarkMode() {
-    setDarkMode(prev => !prev)
-  }
+  //~~~~~~~~~~~~~NUMBER ONE~~~~~~~~~~~~~
+	let [darkMode, setDarkMode] = useState(true);
 
-  return (
+	function updateDarkMode() {
+		//TODO: example set state directly - don't forget to change state to 'let'
+		/*
+      darkMode = !darkMode
+      console.log(darkMode)
+    */
+		setDarkMode(prev => !prev)
+	}
 
-    
-    <div className={darkMode ? 'App' : 'App light'}>
-      
-      <Header  />
-      <button onClick={() => updateDarkMode()}>{darkMode ? 'Light Mode' : 'Dark Mode'}</button>
-      <ProjectForm />
-      <ProjectList projects = {projects}/>
-    </div>
-  );
+	return (
+		<div className={darkMode ? "App" : "App light"}>
+			<Header />
+			<button onClick={() => updateDarkMode()}>
+				{darkMode ? "Light Mode" : "Dark Mode"}
+			</button>
+      { /*show updating in function and inline */ }
+			{/* <button onClick={() => setDarkMode(prev => !prev)}>{darkMode ? 'Light Mode' : 'Dark Mode'}</button> */}
+			<ProjectForm />
+			<ProjectList projects={projects} />
+		</div>
+	);
 }
 
 export default App;
