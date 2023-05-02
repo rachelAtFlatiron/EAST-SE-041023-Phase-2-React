@@ -28,8 +28,7 @@
 #### 2. Add a click event to a clap button inside the `ProjectListItem` component that increments claps by one when triggered:
 
 ##### 2a. Create a clap button in the `figure` div 
-##### 2b. Initialize state `clapCounts` set to 0
-
+##### 2b. Initialize state `clapCounts`
 ##### 2c. Create a function `handleClap` that will increment the `clapCounts` state by 1
 
 ##### 2d. Attach a 'click' event to the clap button that invokes the callback function `handleClap`
@@ -37,6 +36,17 @@
 <br />
 
 #### 3. Implement a filter by project phase feature inside the `ProjectList` component:
+
+```js
+<div className="filter">
+    <button>All</button>
+    <button>Phase 5</button>
+    <button>Phase 4</button>
+    <button>Phase 3</button>
+    <button>Phase 2</button>
+    <button>Phase 1</button>
+</div>
+```
 
 ##### 3a. Create buttons in `ProjectList.js` that represent each phase.
 ##### 3b. Initialize state `phase` set to 0

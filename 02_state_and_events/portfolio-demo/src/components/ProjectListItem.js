@@ -1,23 +1,29 @@
+//1. import useState
 import { useState } from "react";
 
 function ProjectListItem({ project }) {
-
-	
+	//project.claps
 	let { name, about, image, claps, link, phase } = project;
-	
-	//ask what projectClaps shoud be set to
+
+	//2. create state
+	// set to claps aka project.claps so that it is aligned with our data
 	const [projectClaps, setProjectClaps] = useState(claps)
 
-	function updateProjectClaps () {
-		setProjectClaps( prev => prev + 1)
+	//3. create callback function
+	const handleClap = () => {
+		//projectClaps = projectClaps + 1
+		//projectClaps += 1
+
+		//4. update state
+		setProjectClaps(prevProjectClaps => prevProjectClaps + 1)
 	}
-	
+
 	return (
 		<li className="card">
 			<figure className="image">
 				<img src={image} alt={name} />
-				{/* <button onClick={() => updateProjectClaps()} className="claps">👏{projectClaps}</button> */}
-				<button onClick={() => setProjectClaps(prev => prev+1)} className="claps">👏{projectClaps}</button>
+				{ /* 5. create event handler */ }
+				<button onClick={handleClap} className="claps">👏{projectClaps}</button>
 			</figure>
 			<section className="details">
 				<h4>{name}</h4>

@@ -22,6 +22,7 @@ function ProjectList({ projects }) {
 		<section>
 			<h2>Project List</h2>
 			<div className="filter">
+<<<<<<< HEAD
 				<button onClick={() => handleClick(0)}>All</button>
 				<button onClick={() => handleClick(5)}>Phase 5</button>
 				<button onClick={() => handleClick(4)}>Phase 4</button>
@@ -34,6 +35,14 @@ function ProjectList({ projects }) {
 						return <button onClick={() => handleClick(el)}>Phase {el}</button>
 					})
 				} */}
+=======
+				<button>All</button>
+				<button>Phase 5</button>
+				<button>Phase 4</button>
+				<button>Phase 3</button>
+				<button>Phase 2</button>
+				<button>Phase 1</button>
+>>>>>>> 02_starter
 			</div>
 			<ul className="cards">
 				{filteredProjects.map((project) => (
