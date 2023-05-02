@@ -1,10 +1,10 @@
 <mxfile host="65bd71144e">
     <diagram id="vC2UGVJM11Pgb3OtcGuh" name="Page-1">
-        <mxGraphModel dx="476" dy="426" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="723" dy="425" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="App" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="2" value="App&lt;br&gt;state: darkMode" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="320" y="110" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="3" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="2" target="4" edge="1">
@@ -24,7 +24,7 @@
                         <Array as="points"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="7" value="ProjectList" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="7" value="ProjectList&lt;br&gt;state: phaseState" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="320" y="320" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="8" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="2" edge="1">
@@ -37,21 +37,21 @@
                 <mxCell id="9" value="ProjectForm" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="500" y="220" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="props: projectList&amp;nbsp; [ { ... }, ... ]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-                    <mxGeometry x="370" y="290" width="180" height="30" as="geometry"/>
+                <mxCell id="10" value="props: projects&amp;nbsp; [ { ... }, ... ]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="290" width="160" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="7">
+                <mxCell id="11" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="7" edge="1">
                     <mxGeometry width="100" relative="1" as="geometry">
                         <mxPoint x="310" y="410" as="sourcePoint"/>
                         <mxPoint x="380" y="470" as="targetPoint"/>
                         <Array as="points"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="12" value="ProjectListItem" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                <mxCell id="12" value="ProjectListItem" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="320" y="470" width="120" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="props: { ... }" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-                    <mxGeometry x="400" y="415" width="80" height="30" as="geometry"/>
+                <mxCell id="13" value="props: project { ... }" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="415" width="120" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
