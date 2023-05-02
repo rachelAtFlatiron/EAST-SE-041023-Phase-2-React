@@ -27,24 +27,24 @@ title: '03_information_flow'
 
 "[In React](https://reactjs.org/docs/lifting-state-up.html), sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called “lifting state up”."
 
-<img src="https://learn.meritacademy.tech/assets/images/reactjs/01-data-flow-react.png">
+<img src="https://learn.meritacademy.tech/assets/images/reactjs/01-data-flow-react.png" />
 
-
----
-
-## Diagram 
-
-<img src="https://res.cloudinary.com/dnocv6uwb/image/upload/v1645814361/react-inverse-data-flow-diagram_zpunjn.png" alt="Information flow diagram" height="500" width="700">
-
----
-
-## Demo: Inverse data flow in DrawIO
+<aside class="notes">
+- parent passes down data as props.  including callback functions for setState
+<br />
+- events will trigger the setState callback function which will update the uppermost parent
+<br />
+- parent rerenders causing children to re-render with updated parent state
+</aside>
 
 ---
 
-## Deliverable #2: Dark Mode with Inverse Data Flow
+## Lifting State Up ⬆️ 
+#### siblings cannot share data
+- it is up to the parent to get information from child A and pass it down to child B
 
 ---
+
 
 ## Steps
 
@@ -59,6 +59,17 @@ title: '03_information_flow'
 5. create event listener in child two that invokes callback function
     - as a result state changes in the parent
     - and the state parent passes down to child one (as props) changes
+
+---
+
+## Diagram 
+
+<img src="https://res.cloudinary.com/dnocv6uwb/image/upload/v1645814361/react-inverse-data-flow-diagram_zpunjn.png" alt="Information flow diagram" height="500" width="700">
+
+---
+
+## Demo: Inverse data flow in DrawIO
+## And Deliverable #2: Dark Mode with Inverse Flow
 
 ---
 

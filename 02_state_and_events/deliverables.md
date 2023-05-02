@@ -28,7 +28,7 @@
 #### 2. Add a click event to a clap button inside the `ProjectListItem` component that increments claps by one when triggered:
 
 ##### 2a. Create a clap button in the `figure` div 
-##### 2b. Initialize state `clapCounts` set to 0
+##### 2b. Initialize state `clapCounts`
 
 ##### 2c. Create a function `handleClap` that will increment the `clapCounts` state by 1
 
