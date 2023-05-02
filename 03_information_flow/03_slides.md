@@ -20,6 +20,28 @@ title: '03_information_flow'
 ## Before we get started
 ## Deliverable #1: Fetch 
 
+
+---
+
+##  🌈 Friendly Reminders ✨
+
+#### 🚦 DO NOT PASS DOWN SETSTATE DIRECTLY 🛑
+- always put setState in a callback function and pass down the callback function as props
+```js
+function updateState() => {
+    setState("some value")
+}
+```
+<br />
+
+#### 🚦 DO NOT DIRECTLY MUTATE STATE ‼️
+- always setState to a new value or use the callback function: `setState(prev => !prev)` 
+- and don't do this: `stateVariable = newValue`
+<br />
+
+😌 Thank you 
+
+
 ---
 
 ## Lifting State Up ⬆️ 
@@ -27,7 +49,7 @@ title: '03_information_flow'
 
 "[In React](https://reactjs.org/docs/lifting-state-up.html), sharing state is accomplished by moving it up to the closest common ancestor of the components that need it. This is called “lifting state up”."
 
-<img src="https://learn.meritacademy.tech/assets/images/reactjs/01-data-flow-react.png" />
+<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--KQmSLNKR--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6ta8hhixxyo8jwhndq0z.jpeg" />
 
 <aside class="notes">
 - parent passes down data as props.  including callback functions for setState
