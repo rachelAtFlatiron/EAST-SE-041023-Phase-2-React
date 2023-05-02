@@ -102,6 +102,7 @@ This is helpful in the case where we need to introduce additional event handling
 <aside class="notes">
 - synthetic events are wrappers for native events
 - they also make events cross browser compatible
+- DO EXAMPLE SIMPLE ONCLICK CONSOLE.LOG EVENT
 </aside>
 
 ---
@@ -157,29 +158,6 @@ Calling the setter function does two things:
 
 ---
 
-## Deliverable #1, 2: 👏
-
----
-
-## React Flow
-
-<img width="800px" src="https://www.exploringreact.com/wp-content/uploads/2020/11/unidirectional.png" />
-
----
-
-## React Lifecycle
-
-<img width="700px" src="https://media.licdn.com/dms/image/D5612AQE5Nzfep6s1Ww/article-inline_image-shrink_1500_2232/0/1654106745367?e=1686787200&v=beta&t=-L8G2BVZeprAmOVOE6QHdE_wJFpcpuhxhWZgAIBPpAA"> 
-
----
-
-## React Lifecycle
-
-- Mount: When a component is first added to the DOM
-- Re-render/update: When a component updates DOM nodes 
-- Unmount: When a component is removed from the DOM
-
----
 
 ## Setting State Gotcha's
 
@@ -228,6 +206,30 @@ setterFunc(prevSetterVariable => prevSetterVariable + "new string")
 //instead of directly mutating arrays use the spread operator, filter, or map
 setterFuncForArray(prevArrayVariable => [...prevArrayVariable, newValue])
 ```
+
+---
+
+## Deliverable #1, 2: 👏
+
+---
+
+## React Flow
+
+<img width="800px" src="https://www.exploringreact.com/wp-content/uploads/2020/11/unidirectional.png" />
+
+---
+
+## React Lifecycle
+
+<img width="700px" src="https://media.licdn.com/dms/image/D5612AQE5Nzfep6s1Ww/article-inline_image-shrink_1500_2232/0/1654106745367?e=1686787200&v=beta&t=-L8G2BVZeprAmOVOE6QHdE_wJFpcpuhxhWZgAIBPpAA"> 
+
+---
+
+## React Lifecycle
+
+- Mount: When a component is first added to the DOM
+- Re-render/update: When a component updates DOM nodes 
+- Unmount: When a component is removed from the DOM
 
 ---
 
