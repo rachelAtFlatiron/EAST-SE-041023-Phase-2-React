@@ -106,9 +106,6 @@ This is helpful in the case where we need to introduce additional event handling
 
 ---
 
-## Demo: Deliverable #1: Dark Mode
-
----
 
 ## What is React state?
 
@@ -160,7 +157,7 @@ Calling the setter function does two things:
 
 ---
 
-## Deliverable #2: 👏
+## Deliverable #1, 2: 👏
 
 ---
 
