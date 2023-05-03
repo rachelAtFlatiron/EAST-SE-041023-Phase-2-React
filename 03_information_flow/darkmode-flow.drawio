@@ -1,0 +1,30 @@
+<mxfile host="65bd71144e">
+    <diagram id="Edp7UiTPOjjeuZ_E9vBV" name="Page-1">
+        <mxGraphModel dx="575" dy="314" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="App.js&lt;br&gt;&lt;br&gt;state: darkMode&lt;br&gt;&lt;br&gt;updateDarkMode = () =&amp;gt; {&lt;br&gt;setDarkMode(prev =&amp;gt; !prev&lt;br&gt;)}" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="300" y="40" width="200" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" style="edgeStyle=none;html=1;" edge="1" parent="1" source="4">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="200" y="210" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="Header.js&lt;br&gt;&lt;br&gt;onClick={() =&amp;gt; updateDarkMode()}" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="130" y="210" width="160" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="" style="endArrow=classic;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="3">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="180" y="210" as="sourcePoint"/>
+                        <mxPoint x="190" y="210" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="6" value="props: updateDarkMode" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

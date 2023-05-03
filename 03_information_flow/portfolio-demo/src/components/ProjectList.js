@@ -19,6 +19,8 @@ function ProjectList({ projects }) {
 		setPhase(phaseNumber)
 	}
 
+	
+
 	return (
 		<section>
 			<h2>Project List</h2>
