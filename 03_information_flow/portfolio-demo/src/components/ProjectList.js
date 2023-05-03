@@ -1,25 +1,17 @@
-import { useState } from 'react'
+import { useState } from "react";
 import ProjectListItem from "./ProjectListItem";
 
-
-function ProjectList({ projects }) {
-
-	const [phaseState, setPhase] = useState(0)
-
-
-	const filteredProjects = projects.filter(project => 
-		phaseState === 0 || project.phase === phaseState
-	)
-
+function ProjectList({ projects, phaseState, updatePhase }) {
 	// const filteredProjectsMap = filteredProjects.map(project => {
 	// 	return 	<ProjectListItem key={project.id} project={project} />
 	// })
 
-	function updatePhase(phaseNumber) {
-		setPhase(phaseNumber)
-	}
 
-	
+	//move filtering process here because it relies on phaseState
+	//which is getting update in this component
+	const filteredProjects = projects.filter(
+		(project) => phaseState === 0 || project.phase === phaseState
+	);
 
 	return (
 		<section>

@@ -1,0 +1,37 @@
+<mxfile host="65bd71144e">
+    <diagram id="faeSXg8f0V2fyYmfKQ99" name="Page-1">
+        <mxGraphModel dx="548" dy="520" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="6" value="" style="endArrow=classic;html=1;exitX=0.976;exitY=-0.018;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.453;entryY=1.018;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="3" target="2">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="360" y="230" as="sourcePoint"/>
+                        <mxPoint x="520" y="230" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="updatePhase triggers setPhase" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Source" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="6">
+                    <mxGeometry x="-1" relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="App.js&lt;br&gt;&lt;br&gt;state: phase, projects&lt;br&gt;callback: updatePhase (sets phase state INSIDE App.js)" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="390" width="320" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="ProjectList.js&lt;br&gt;props: phase, updatePhase, projects&lt;br&gt;&lt;br&gt;event: triggers updatePhase&lt;br&gt;&lt;br&gt;use phase to filter through projects" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="310" width="380" height="170" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="" style="endArrow=classic;html=1;exitX=0.078;exitY=1.018;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.671;entryY=-0.011;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2" target="3">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="390" y="250" as="sourcePoint"/>
+                        <mxPoint x="490" y="250" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value="props: phase, projects, updatePhase" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
