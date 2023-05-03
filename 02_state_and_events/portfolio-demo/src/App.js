@@ -25,7 +25,9 @@ function App() {
   return (
     <div className={darkMode ? "App" : "App light"}>
       <Header />
-      <button onClick={handleClick}>{darkMode ? "Light Mode" : "Dark Mode"}</button>
+      {/* <button onClick={handleClick}>{darkMode ? "Light Mode" : "Dark Mode"}</button> */}
+
+      <button onClick={() => setDarkMode(prevDarkMode => !prevDarkMode)}>{darkMode ? "Light Mode" : "Dark Mode"}</button>
       <ProjectForm />
       <ProjectList projects = {projects}/>
     </div>
