@@ -9,6 +9,8 @@
 
  ---
 
+ ## Note: `phaseState` has been moved back into `ProjectList.js`
+
  ## Deliverables
 
 
@@ -36,8 +38,14 @@
 
 <br />
 
-#### 4. Demonstrate the unmounting and cleanup phase of a component through `useEffect`
+#### 4. Demonstrate `useEffect` dependency array with `phaseState`, `searchQuery`, and `projects` in `ProjectList.js`
 
-##### - Return a cleanup function inside the `useEffect` with a console.log()
+##### 4a. Create a state for `filteredProjects` in `ProjectList.js`
+
+##### 4b. Create a `useEffect` with `phaseState`, `searchQuery` and `projects` in the dependency array 
+
+##### 4c. Filter through `projects` based on `phaseState` and `searchQuery` inside the useEffect
+
+##### 4d. Set `filteredProjects` to the filtered state
 
 ##### - Open up the devtools to observe when the cleanup will occur in the stages of a components lifecycles
