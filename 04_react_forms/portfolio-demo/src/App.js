@@ -22,11 +22,16 @@ function App() {
     .then(res => res.json())
     .then(data => setProjects(data))
   }
+
+
+  const addProject = (project) => {
+    setProjects([...projects, project])
+  }
   
   return (
     <div className={darkMode ? "App" : "App light"}>
       <Header handleClick={updateDarkMode} darkMode={darkMode} />
-      <ProjectForm />
+      <ProjectForm addProject={addProject} />
       <button onClick={loadProjects}>Load Projects</button>
       <ProjectList phaseState={phaseState} updatePhase={updatePhase} projects={projects}/>
     </div>
