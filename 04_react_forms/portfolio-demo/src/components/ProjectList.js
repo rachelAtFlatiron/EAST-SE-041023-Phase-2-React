@@ -1,8 +1,28 @@
+import { useState } from 'react'
 import ProjectListItem from "./ProjectListItem";
+
 function ProjectList({ projects, phaseState, updatePhase }) {
 
+	const [ searchQuery, setSearchQuery ] =  useState('')
 	const filteredProjects = projects.filter(
-		(project) => phaseState === 0 || project.phase === phaseState
+		//check if phase matches: phaseState === 0 || project.phase === phaseState
+		//AND 
+		//check if query matches: searchQuery === '' || project.name.toLowerCase().includes(searchQuery.toLowerCase())
+		(project) => {
+			// return (
+			// 	(phaseState === 0 || project.phase === phaseState) &&  
+			// 	(searchQuery === '' || project.name.toLowerCase().includes(searchQuery.toLowerCase())) 
+			// )
+			if(phaseState === 0 || project.phase === phaseState){
+				if(project.name.toLowerCase().includes(searchQuery.toLowerCase())){
+					return true 
+				} else {
+					return false
+				}
+			} else {
+				return false
+			}
+		}
 	);
 
 	return (
@@ -20,6 +40,8 @@ function ProjectList({ projects, phaseState, updatePhase }) {
 				type="text"
 				placeholder="Search..."
 				name="search"
+				value={searchQuery}
+				onChange={(e) => setSearchQuery(e.target.value)}
 			/>
 			<ul className="cards">
 				{filteredProjects.map((project) => (

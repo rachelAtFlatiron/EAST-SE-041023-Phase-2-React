@@ -33,7 +33,6 @@ function ProjectForm({ addProject }) {
 	//form state initialized to empty form outline
 	const [form, setForm] = useState(formOutline);
 
-
 	const handleSubmit = (e) => {
 		e.preventDefault(); //we still need this in synthetic events
 
@@ -52,14 +51,39 @@ function ProjectForm({ addProject }) {
 		// setLink('')
 		// setImage('')
 
-		//call addProject passed down from App.js
-		addProject({
-			...form,
-			phase: parseInt(form.phase),
-		});
+		//~~~~~~~~~~~~~~~~~~~~~POST REQUEST~~~~~~~~~~~~~~~~~~~~
+		fetch("http://localhost:4000/projects", {
+			method: "POST",
+			body: JSON.stringify({
+				...form,
+				phase: parseInt(form.phase),
+			}),
+			headers: {
+				"content-type": "application/json",
+			},
+		})
+		.then((res) => res.json())
+		//only want App's projects state to update
+		//only want form to reset
+		//if post request was successful
+		.then((data) => {
 
-		//reset form on successful submit
-		setForm(formOutline);
+			// addProject({
+			// 	...form, 
+			// 	phase: parseInt(form.phase)
+			// })
+
+			//call addProject with data returned by POST request
+			//so that we can also pass up id created by json-server
+			addProject(data); 
+
+
+			//reset form on successful submit
+			setForm(formOutline);
+		})
+		.catch(err => console.log(err))
+
+		
 	};
 
 	const handleChange = (e) => {
