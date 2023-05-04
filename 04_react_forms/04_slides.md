@@ -75,6 +75,10 @@ const [formValue, setFormValue] = useState('')
 
 ---
 
+<img width="800px" src="https://www.exploringreact.com/wp-content/uploads/2020/11/unidirectional.png" />
+
+---
+
 ## Examples
 
 Uncontrolled:
