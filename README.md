@@ -1,45 +1,43 @@
-# React Forms
+# Side Effects and Fetching
 
-## SWBATs:
+## SWBATs
 
-- [ ] Explain the difference between a controlled and uncontrolled input
-- [ ] Explain why controlled inputs are preferred by the React community
-- [ ] Review how to use callback functions with events in React
-- [ ] Review how to change parent state from a child component
+ - [ ] Explain what a side effect is
+ - [ ] Observe how React manages side effects with the useEffect hook
+ - [ ] Observe how to use the useEffect hook to fetch data on page load
+ - [ ] Review changing parent state
 
----
+ ---
 
-## Deliverables
-
-
-
-#### 1. Create a `ProjectForm` component that will create a new project
-
-<br />
-
-#### 2. Make the `ProjectForm` component a controlled component
-
-##### 2a. Initialize state for all the form fields found in the component
-
-##### 2b. Add an `onChange` event to each field that will update state associated to the field that is interacted with
-
-##### 2c.  Provide a `value` attribute to each form field that will return the associated piece of state
-
-##### 2d.  Add an `onSubmit` event handler to the form
+ ## Deliverables
 
 
+#### 1. Persist the new project upon the `ProjectForm` submission
+
+##### 1a. Send the new project data to the server using a `POST` fetch request
 
 <br />
 
-#### 3. Handle submitting the form and update state in parent using inverse data flow
+#### 2. Implement useEffect in App component to load projects
 
-##### - When the form is submitted:
+##### 2a. Import the `useEffect` hook from the React library
 
-##### 3a. Use inverse data flow to include the new project in the `projects` state in `App`
+##### 2b. Use `useEffect` and make a `GET` request using the `fetch` method
+
+##### 2c. Update `projects` state to the response from the server
 
 <br />
 
-#### 4. Create a search by name filter
-##### 4a. Create state for the `searchQuery` in `ProjectList`
-##### 4b. Create a controlled form for the search query
-##### 4c. One search query change update the `searchQuery`
+#### 3. Demonstrate the order of operations between rendering a component and running the side effect
+
+##### - Place a console.log() inside the `App` component as well as the `useEffect` method
+
+##### - Open up the devtools to observe when each phase of the component will occur 
+
+<br />
+
+#### 4. Demonstrate the unmounting and cleanup phase of a component through `useEffect`
+
+##### - Return a cleanup function inside the `useEffect` with a console.log()
+
+##### - Open up the devtools to observe when the cleanup will occur in the stages of a components lifecycles
