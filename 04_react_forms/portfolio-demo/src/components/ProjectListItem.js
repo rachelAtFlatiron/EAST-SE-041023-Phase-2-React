@@ -1,4 +1,3 @@
-//1. import useState
 import { useState } from "react";
 
 function ProjectListItem({ project }) {

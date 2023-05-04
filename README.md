@@ -1,53 +1,45 @@
-# Information Flow
+# React Forms
 
 ## SWBATs:
 
-- [ ] Define the term “lifting state”
-- [ ] Recognize the pattern for changing state in a parent component from a child component
-- [ ] Explain the role that callback functions play in changing parent state
-- [ ] Recognize destructured props and how to work with them
+- [ ] Explain the difference between a controlled and uncontrolled input
+- [ ] Explain why controlled inputs are preferred by the React community
+- [ ] Review how to use callback functions with events in React
+- [ ] Review how to change parent state from a child component
 
 ---
 
 ## Deliverables
 
-#### 1. Add a button to our App that will use json-server to fetch `projects.js` and store them in state
 
-##### 1a. Create a state for projects array
-##### 1b. Add a button 'Load Projects' to `App`
 
-##### 1c. Add a 'click' event to the button
-
-##### 1d. When the button is clicked, make a fetch request to "http://localhost:4000/projects" and set the `projects` state to the value returned by the response
+#### 1. Create a `ProjectForm` component that will create a new project
 
 <br />
 
-#### 2. Use inverse data flow to implement Light-Dark mode
+#### 2. Make the `ProjectForm` component a controlled component
 
-##### 2a. Move the dark mode button to `Header`
+##### 2a. Initialize state for all the form fields found in the component
 
-##### 2b. Create a callback function that updates `isDarkMode` and pass the callback function as a prop to the `Header` component
+##### 2b. Add an `onChange` event to each field that will update state associated to the field that is interacted with
 
-##### 2c.  Inside the `Header` component, invoke the callback function to update state in `App`
+##### 2c.  Provide a `value` attribute to each form field that will return the associated piece of state
 
-<br />
-
-#### 3. Refactor the phase filter component out of `ProjectList` and implement inverse data flow
-
-##### 3a. Move the `phase` state from `ProjectList` to `App`
+##### 2d.  Add an `onSubmit` event handler to the form
 
 
-##### 3b. Write a callback function inside the App component:
-
-  ##### - the function should take in a new phase value and update state
-
-  ##### - pass the callback function down as a prop to `ProjectList`
-
-##### 3c. Using inverse data flow, get the value of the phase to filter by UP to the App component:
-##### - Invoke the callback function from the onClick event listener
 
 <br />
 
---- 
-### Resources
-- [React - Lifting State Up](https://reactjs.org/docs/lifting-state-up.html)
+#### 3. Handle submitting the form and update state in parent using inverse data flow
+
+##### - When the form is submitted:
+
+##### 3a. Use inverse data flow to include the new project in the `projects` state in `App`
+
+<br />
+
+#### 4. Create a search by name filter in `App`
+##### 4a. Create state for the `searchQuery` in `ProjectList`
+##### 4b. Create a controlled form for the search query
+##### 4c. One search query change update the `searchQuery`
