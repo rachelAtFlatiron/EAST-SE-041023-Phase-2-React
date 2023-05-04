@@ -9,6 +9,8 @@
 
  ---
 
+ ## Note: `phaseState` has been moved back into `ProjectList.js`
+
  ## Deliverables
 
 

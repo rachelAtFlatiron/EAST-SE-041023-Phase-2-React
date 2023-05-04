@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import ProjectListItem from "./ProjectListItem";
 
-function ProjectList({ projects, phaseState, updatePhase }) {
+function ProjectList({ projects }) {
 
 	const [ searchQuery, setSearchQuery ] =  useState('')
+	const [phaseState, setPhase] = useState(0)
+
 	const filteredProjects = projects.filter(
 		(project) => {
 			return (
@@ -12,6 +14,11 @@ function ProjectList({ projects, phaseState, updatePhase }) {
 			)
 		}
 	);
+
+	function updatePhase(phaseNumber) {
+		setPhase(phaseNumber)
+	}
+
 
 	return (
 		<section>

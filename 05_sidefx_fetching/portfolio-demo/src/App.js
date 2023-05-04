@@ -7,11 +7,8 @@ function App() {
 
   const [darkMode, setDarkMode] = useState(true)
   const [ projects, setProjects ] = useState([])
-  const [phaseState, setPhase] = useState(0)
+  
 
-  function updatePhase(phaseNumber) {
-		setPhase(phaseNumber)
-	}
 
   const updateDarkMode = () => {
     setDarkMode(prevDarkMode => !prevDarkMode)
@@ -33,7 +30,7 @@ function App() {
       <Header handleClick={updateDarkMode} darkMode={darkMode} />
       <ProjectForm addProject={addProject} />
       <button onClick={loadProjects}>Load Projects</button>
-      <ProjectList phaseState={phaseState} updatePhase={updatePhase} projects={projects}/>
+      <ProjectList projects={projects}/>
     </div>
   );
 }
