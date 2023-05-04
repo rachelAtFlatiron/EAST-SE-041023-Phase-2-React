@@ -1,6 +1,4 @@
-import { useState } from "react";
 import ProjectListItem from "./ProjectListItem";
-
 function ProjectList({ projects, phaseState, updatePhase }) {
 
 	const filteredProjects = projects.filter(
@@ -18,6 +16,11 @@ function ProjectList({ projects, phaseState, updatePhase }) {
 				<button onClick={() => updatePhase(2)}>Phase 2</button>
 				<button onClick={() => updatePhase(1)}>Phase 1</button>
 			</div>
+			<input
+				type="text"
+				placeholder="Search..."
+				name="search"
+			/>
 			<ul className="cards">
 				{filteredProjects.map((project) => (
 					<ProjectListItem key={project.id} project={project} />
