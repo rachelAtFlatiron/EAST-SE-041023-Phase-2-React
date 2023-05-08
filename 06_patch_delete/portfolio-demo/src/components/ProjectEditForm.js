@@ -1,21 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function ProjectEditForm() {
-	const formOutline = {
-		name: "",
-		about: "",
-		link: "",
-		image: "",
-		phase: 0,
-		claps: 0,
+function ProjectEditForm({ projectToEdit, editProject }) {
+
+	const [formData, setFormData] = useState({...projectToEdit});
+
+	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE FORMDATA WHEN PROJECTTOEDIT CHANGES (IN APP.JS)
+	useEffect(() => {
+		setFormData({...projectToEdit})
+	}, [projectToEdit])
+
+	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PASS FORMDATA TO APP.JS FOR PATCH
+	const handleSubmit = (e) => {
+		e.preventDefault()
+		editProject(formData)
 	};
-	const [formData, setFormData] = useState(formOutline);
 
-	const handleSubmit = () => {};
-	const handleOnChange = () => {};
+	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ UPDATE FORMDATA ON INPUT CHANGE
+	const handleOnChange = (e) => {
+		setFormData(
+			{
+				...formData,
+				[e.target.name]: e.target.value
+			}
+		)
+	};
 
 	return (
-		<form onSubmit={handleSubmit} className="form" autoComplete="off" style={{display: "none"}}>
+		// if projectToEdit HAS NO KEYS, hide form
+		<form onSubmit={handleSubmit} className="form" autoComplete="off" style={{display: Object.keys(projectToEdit).length === 0 ? "none" : "flex"}}>
 			<h3>Edit Project</h3>
 
 			<label htmlFor="name">Name</label>
