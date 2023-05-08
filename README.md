@@ -22,8 +22,9 @@
 
 #### 3. Submit the edit project form and make a PATCH request
 
-##### 3a. In `ProjectEditForm` create an `onSubmit` function that executes the `PATCH` request.
+##### 3a. In `App` create a function that executes the `PATCH` request.
 ##### 3b. In `App` update `projects` with the revised project and reset `projectToEdit`.
+##### 3c. Pass this function down to `ProjectEditForm`
 
 <br />
 
