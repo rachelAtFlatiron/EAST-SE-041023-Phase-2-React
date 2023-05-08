@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from "./components/Header";
 import ProjectList from "./components/ProjectList";
 import ProjectForm from "./components/ProjectForm";
@@ -8,7 +8,9 @@ function App() {
   const [darkMode, setDarkMode] = useState(true)
   const [ projects, setProjects ] = useState([])
   
-
+  useEffect(() => {
+    loadProjects()
+  }, []) 
 
   const updateDarkMode = () => {
     setDarkMode(prevDarkMode => !prevDarkMode)
@@ -20,7 +22,6 @@ function App() {
     .then(data => setProjects(data))
   }
 
-
   const addProject = (project) => {
     setProjects([...projects, project])
   }
@@ -29,7 +30,6 @@ function App() {
     <div className={darkMode ? "App" : "App light"}>
       <Header handleClick={updateDarkMode} darkMode={darkMode} />
       <ProjectForm addProject={addProject} />
-      <button onClick={loadProjects}>Load Projects</button>
       <ProjectList projects={projects}/>
     </div>
   );

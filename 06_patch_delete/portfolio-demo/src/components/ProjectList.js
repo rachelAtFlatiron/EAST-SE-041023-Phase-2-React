@@ -1,16 +1,16 @@
-import { useState } from 'react'
+import { useState } from "react";
 import ProjectListItem from "./ProjectListItem";
 
 function ProjectList({ projects }) {
+	const [searchQuery, setSearchQuery] = useState("");
+	const [phaseState, setPhase] = useState(0);
 
-	const [ searchQuery, setSearchQuery ] =  useState('')
-	const [phaseState, setPhase] = useState(0)
-
+	console.log('ProjectList outside of useEffect')
 	const filteredProjects = projects.filter(
 		(project) => {
 			return (
-				(phaseState === 0 || project.phase === phaseState) &&  
-				(searchQuery === '' || project.name.toLowerCase().includes(searchQuery.toLowerCase())) 
+				(phaseState === 0 || project.phase === phaseState) &&
+				(searchQuery === '' || project.name.toLowerCase().includes(searchQuery.toLowerCase()))
 			)
 		}
 	);

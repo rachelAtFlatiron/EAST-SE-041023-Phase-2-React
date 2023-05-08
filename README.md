@@ -1,51 +1,42 @@
-# Side Effects and Fetching
+# PATCH & DELETE Requests
 
-## SWBATs
+## SWBATs:
 
- - [ ] Explain what a side effect is
- - [ ] Observe how React manages side effects with the useEffect hook
- - [ ] Observe how to use the useEffect hook to fetch data on page load
- - [ ] Review changing parent state
+- [ ] Observe how to send PATCH & DELETE requests
+- [ ] Review changing parent state
 
- ---
+***
 
- ## Note: `phaseState` has been moved back into `ProjectList.js`
+## Deliverables
 
- ## Deliverables
+#### 1. Create a `ProjectEditForm` component
+##### 1a. Make `ProjectEditForm` a controlled form
+<br />
 
-
-#### 1. Persist the new project upon the `ProjectForm` submission
-
-##### 1a. Send the new project data to the server using a `POST` fetch request
+#### 2. Create state in `App` to represent the project to edit
+##### 2a. Add a button to `ProjectListItem` that, when clicked on, will:
+##### - update said state with the appropriate project object
+##### - display the `ProjectEditForm` with the appropriate data.
 
 <br />
 
-#### 2. Implement useEffect in App component to load projects
+#### 3. Submit the edit project form and make a PATCH request
 
-##### 2a. Import the `useEffect` hook from the React library
-
-##### 2b. Use `useEffect` and make a `GET` request using the `fetch` method
-
-##### 2c. Update `projects` state to the response from the server
+##### 3a. In `ProjectEditForm` create an `onSubmit` function that executes the `PATCH` request.
+##### 3b. In `App` update `projects` with the revised project and reset `projectToEdit`.
 
 <br />
 
-#### 3. Demonstrate the order of operations between rendering a component and running the side effect
-
-##### - Place a console.log() inside the `App` component as well as the `useEffect` method
-
-##### - Open up the devtools to observe when each phase of the component will occur 
+#### 4. For the clap button, update the `onClick` event handler to send a `PATCH` request to save the updated claps in the database
+##### 4a. Send this information to `App` and include it in `projects`
 
 <br />
 
-#### 4. Demonstrate `useEffect` dependency array with `phaseState`, `searchQuery`, and `projects` in `ProjectList.js`
+#### 5. Add a delete button to `ProjectListItem`
+##### 5a. Create an `onClick` event handler
+##### 5b. When clicked, use a fetch request to delete the project from the database
+##### 5c. Pass this information to `App` and remove the appropriate project from `projects`
 
-##### 4a. Create a state for `filteredProjects` in `ProjectList.js`
+<br />
 
-##### 4b. Create a `useEffect` with `phaseState`, `searchQuery` and `projects` in the dependency array 
 
-##### 4c. Filter through `projects` based on `phaseState` and `searchQuery` inside the useEffect
-
-##### 4d. Set `filteredProjects` to the filtered state
-
-##### - Open up the devtools to observe when the cleanup will occur in the stages of a components lifecycles
