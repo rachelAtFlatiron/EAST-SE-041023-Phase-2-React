@@ -5,7 +5,6 @@ function ProjectList({ projects }) {
 	const [searchQuery, setSearchQuery] = useState("");
 	const [phaseState, setPhase] = useState(0);
 
-	console.log('ProjectList outside of useEffect')
 	const filteredProjects = projects.filter(
 		(project) => {
 			return (
