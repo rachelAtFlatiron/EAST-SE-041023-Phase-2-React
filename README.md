@@ -12,9 +12,9 @@
 | 1. Components & Props | [Notes](https://docs.google.com/document/d/12oKrltZfNgTXzInb3cJAikqnV_KGsjqfgaiKcfp8WtM/edit?usp=sharing) | [Video](https://youtu.be/0bdy9gGody0) | [Starter](https://github.com/rachelAtFlatiron/EAST-SE-041023-Phase-2-React/tree/01_starter) | [Solution](https://github.com/rachelAtFlatiron/EAST-SE-041023-Phase-2-React/tree/01_solution) |
 | 2. State & Events | Notes | [Morning Video](https://youtu.be/jqixoccSlF4) [Afternoon Video](https://youtu.be/3mWsqs1S03Y) | [Starter](https://github.com/rachelAtFlatiron/EAST-SE-041023-Phase-2-React/tree/02_starter) | [Solution](https://github.com/rachelAtFlatiron/EAST-SE-041023-Phase-2-React/tree/02_solution) |
 | 3. Information Flow  | Notes | [Video](https://youtu.be/yXLiKBYEf4s) | [Starter](https://github.com/rachelAtFlatiron/EAST-SE-041023-Phase-2-React/tree/03_starter) | [Solution](https://github.com/rachelAtFlatiron/EAST-SE-041023-Phase-2-React/tree/03_solution)|     |
-| 4. Forms  | Notes | Video | Starter | Solution |
-| 5. Side Effects & Data Fetching  | Notes | Video | Starter | Solution |
-| 6. PATCH & DELETE  | Notes | Video | Starter | Solution |
+| 4. Forms  | Notes | [Morning](https://youtu.be/GA1xZZPRJ7I) [Afternoon](https://youtu.be/02hjN1919Qw) | [Starter](https://github.com/rachelAtFlatiron/EAST-SE-041023-Phase-2-React/tree/04_starter) | [Solution](https://github.com/rachelAtFlatiron/EAST-SE-041023-Phase-2-React/tree/04_solution) |
+| 5. Side Effects & Data Fetching  | Notes | [Video](https://youtu.be/MRDfgVvc5JA) | [Starter](https://github.com/rachelAtFlatiron/EAST-SE-041023-Phase-2-React/tree/05_starter) | [Solution](https://github.com/rachelAtFlatiron/EAST-SE-041023-Phase-2-React/tree/05_solution) |
+| 6. PATCH & DELETE  | Notes | [Video](https://youtu.be/aZv-jkKDlCQ) | [Starter](https://github.com/rachelAtFlatiron/EAST-SE-041023-Phase-2-React/tree/06_starter) | [Solution](https://github.com/rachelAtFlatiron/EAST-SE-041023-Phase-2-React/tree/06_solution) |
 | 7. Client-Side Routing  | Notes | Video | Starter | Solution |
 
 ***
