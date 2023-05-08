@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Header from "./components/Header";
 import ProjectList from "./components/ProjectList";
 import ProjectForm from "./components/ProjectForm";
+import ProjectEditForm from './components/ProjectEditForm';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
     <div className={darkMode ? "App" : "App light"}>
       <Header handleClick={updateDarkMode} darkMode={darkMode} />
       <ProjectForm addProject={addProject} />
+      <ProjectEditForm />
       <ProjectList projects={projects}/>
     </div>
   );
