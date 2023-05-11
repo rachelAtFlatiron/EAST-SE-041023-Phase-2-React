@@ -1,8 +1,12 @@
 import React from 'react'
 
-//refactor so new project form is here
+//1. refactor so new project form is here
 function CreateProject() {
+
+  //3. make POST request
   return (
+
+    //2. create controlled form
     <div>CreateProject</div>
   )
 }

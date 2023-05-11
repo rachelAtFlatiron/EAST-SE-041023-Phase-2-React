@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import ProjectList from "./components/ProjectList";
 import ProjectForm from "./components/ProjectForm";
 import ProjectEditForm from './components/ProjectEditForm';
+//2. import Routes and Route
 import Home from './pages/Home'
 import About from './pages/About'
 import CreateProject from './pages/CreateProject'
@@ -17,6 +18,7 @@ function App() {
   const [ projectToEdit, setProjectToEdit ] = useState({})
 
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~USE EFFECT TO GET PROJECTS ON PAGE LOAD
+  //move to ProjectsPage
   useEffect(() => {
     loadProjects()
   }, []) 
@@ -27,8 +29,9 @@ function App() {
     .then(data => setProjects(data))
   }
 
+  //Delete all following functions
+
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SET PROJECTOTEDIT TO PRE-POPULATE EDIT FORM
-  //triggered on ProjectListItem onClick
   const updateProjectToEdit = (project) => {
     setProjectToEdit(project)
   }
@@ -39,8 +42,6 @@ function App() {
   }
 
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~PATCH REQUEST
-  //needed in both ProjectListItem (for claps) and ProjectEditForm
-  //params: fromProjectEditForm {...}
   const editProject = (fromProjectEditForm) => {
 
     fetch(`http://localhost:4000/projects/${fromProjectEditForm.id}`, {
@@ -56,13 +57,11 @@ function App() {
 		})
 		.then(res => res.json())
 		.then(data => {
-			//set projects state
 			setProjects(
         [...projects].map(el => {
           return el.id === fromProjectEditForm.id ? fromProjectEditForm : el
         })
       )
-      //only do inside of fetch statement in case fetch fails
       setProjectToEdit({})
 		})
    
@@ -90,6 +89,7 @@ function App() {
       <ProjectForm addProject={addProject} />
       <ProjectEditForm projectToEdit={projectToEdit} editProject={editProject}/>
       <ProjectList projects={projects} updateProjectToEdit={updateProjectToEdit} editProject={editProject} deleteProject={deleteProject} />
+      {/* 3. create routes for all pages -> ProjectsPage.js */}
     </div>
   );
 }

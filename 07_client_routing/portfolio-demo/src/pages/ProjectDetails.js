@@ -1,12 +1,13 @@
 import React from 'react'
 
 function ProjectDetails() {
-  //pass in params to access id
+  //1. pass in params to access id
 
-  //make show request
+  //2. make show request
+  
   return (
     <div>ProjectDetails</div>
-    // refactor to make use of ProjectListItem component
+    //3. refactor to make use of ProjectListItem component
   )
 }
 

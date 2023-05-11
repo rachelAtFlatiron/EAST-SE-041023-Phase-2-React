@@ -7,6 +7,7 @@ function ProjectListItem({ project, editProject, updateProjectToEdit, deleteProj
 	const [projectClaps, setProjectClaps] = useState(claps);
 
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~PATCH REQUEST FOR CLAPS
+	//9. make PATCH request here
 	const handleClap = () => {
 		editProject({
 			...project,
@@ -34,7 +35,7 @@ function ProjectListItem({ project, editProject, updateProjectToEdit, deleteProj
 				</button>
 			</figure>
 			<section className="details">
-				{/* create link to project details page */}
+				{/* 7. create link to project details page */}
 				<h4>{name}</h4>
 				<p>{about}</p>
 				<p>
@@ -45,6 +46,7 @@ function ProjectListItem({ project, editProject, updateProjectToEdit, deleteProj
 			<footer className="extra">
 				<span className="badge blue">Phase {phase}</span>
 				<div className="manage">
+					{/* 8. make link to EditProject.js */}
 					<button onClick={() => updateProjectToEdit(project)}>
 						<FaPencilAlt />
 					</button>

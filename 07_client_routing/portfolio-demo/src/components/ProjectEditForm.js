@@ -10,6 +10,7 @@ function ProjectEditForm({ projectToEdit, editProject }) {
 	}, [projectToEdit])
 
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ PASS FORMDATA TO APP.JS FOR PATCH
+	//make PATCH request here
 	const handleSubmit = (e) => {
 		e.preventDefault()
 		editProject(formData)
