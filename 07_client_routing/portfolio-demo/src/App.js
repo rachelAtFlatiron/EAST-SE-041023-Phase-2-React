@@ -3,6 +3,12 @@ import Header from "./components/Header";
 import ProjectList from "./components/ProjectList";
 import ProjectForm from "./components/ProjectForm";
 import ProjectEditForm from './components/ProjectEditForm';
+import Home from './pages/Home'
+import About from './pages/About'
+import CreateProject from './pages/CreateProject'
+import EditProject from './pages/EditProject'
+import ProjectDetails from './pages/ProjectDetails'
+import ProjectsPage from './pages/ProjectsPage'
 
 function App() {
 
