@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
 function Header({ updateDarkMode }) {
-  return (
-<header>
-				<h1>
-					<span className="logo">{"//"}</span>
-					Project Showcase
-				</h1>
+	return (
+		<header>
+			<h1>
+				<span className="logo">{"//"}</span>
+				Project Showcase
+			</h1>
 			<button onClick={updateDarkMode}>Dark Mode</button>
 			<button className="button" to={"/about"}>
 				About
@@ -18,7 +18,7 @@ function Header({ updateDarkMode }) {
 				All Projects
 			</button>
 		</header>
-  )
+	);
 }
 
-export default Header
+export default Header;

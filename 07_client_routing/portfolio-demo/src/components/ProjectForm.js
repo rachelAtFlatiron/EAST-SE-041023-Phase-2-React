@@ -12,6 +12,7 @@ function ProjectForm({ addProject }) {
 
 	const [form, setForm] = useState(formOutline);
 
+	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ POST request
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
@@ -40,6 +41,7 @@ function ProjectForm({ addProject }) {
 		});
 	};
 
+	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~JSX
 	return (
 		<section>
 			<form

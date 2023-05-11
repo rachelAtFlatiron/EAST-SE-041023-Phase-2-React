@@ -10,10 +10,13 @@ function Home() {
     </p>
 
     <div style={{ margin: "60px 0" }}>
+        {/* create link to project page */}
         <button className="button" >
             View All Projects
         </button>
     </div>
+
+    {/* create fetch request to populate top 5 projects */}
 
 </section>
   )

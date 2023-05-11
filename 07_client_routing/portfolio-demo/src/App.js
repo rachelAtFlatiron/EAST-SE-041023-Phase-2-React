@@ -6,11 +6,8 @@ import ProjectEditForm from './components/ProjectEditForm';
 
 function App() {
 
-  //represents dark or light mode
   const [darkMode, setDarkMode] = useState(true)
-  //represents all projects
   const [ projects, setProjects ] = useState([])
-  //represents object of current project to edit
   const [ projectToEdit, setProjectToEdit ] = useState({})
 
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~USE EFFECT TO GET PROJECTS ON PAGE LOAD

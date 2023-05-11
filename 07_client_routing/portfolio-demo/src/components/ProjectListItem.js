@@ -4,12 +4,10 @@ import { FaPencilAlt, FaTrash } from "react-icons/fa";
 function ProjectListItem({ project, editProject, updateProjectToEdit, deleteProject }) {
 	let { id, name, about, image, claps, link, phase } = project;
 
-	//represents current claps of projectListItem 
 	const [projectClaps, setProjectClaps] = useState(claps);
 
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~PATCH REQUEST FOR CLAPS
 	const handleClap = () => {
-		//patch request, callback function editProject in App.js
 		editProject({
 			...project,
 			claps: project.claps + 1
@@ -23,7 +21,6 @@ function ProjectListItem({ project, editProject, updateProjectToEdit, deleteProj
 			method: 'DELETE'
 		})
 		.then(res => res.json())
-		//pass project to App.js
 		.then(() => deleteProject(project))
 	}
 
@@ -32,13 +29,12 @@ function ProjectListItem({ project, editProject, updateProjectToEdit, deleteProj
 		<li className="card">
 			<figure className="image">
 				<img src={image} alt={name} />
-				{/* patch statement for claps in App.js */}
-				{/* rendering claps state here for updated claps */}
 				<button onClick={handleClap} className="claps">
 					👏{projectClaps}
 				</button>
 			</figure>
 			<section className="details">
+				{/* create link to project details page */}
 				<h4>{name}</h4>
 				<p>{about}</p>
 				<p>
@@ -49,11 +45,9 @@ function ProjectListItem({ project, editProject, updateProjectToEdit, deleteProj
 			<footer className="extra">
 				<span className="badge blue">Phase {phase}</span>
 				<div className="manage">
-					{/* edit button, update projectToEdit state in App.js */}
 					<button onClick={() => updateProjectToEdit(project)}>
 						<FaPencilAlt />
 					</button>
-					{/* delete button */}
 					<button onClick={() => handleDelete()}>
 						<FaTrash />
 					</button>

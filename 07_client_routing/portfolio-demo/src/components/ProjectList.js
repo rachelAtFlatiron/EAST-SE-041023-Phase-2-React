@@ -14,6 +14,7 @@ function ProjectList({ projects, updateProjectToEdit, editProject, deleteProject
 		}
 	);
 
+	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~JSX
 	return (
 		<section>
 			<h2>Project List</h2>
@@ -34,6 +35,7 @@ function ProjectList({ projects, updateProjectToEdit, editProject, deleteProject
 			/>
 			<ul className="cards">
 				{filteredProjects.map((project) => (
+					
 					<ProjectListItem editProject={editProject} key={project.id} project={project} updateProjectToEdit={updateProjectToEdit} deleteProject={deleteProject} />
 				))}
 			</ul>

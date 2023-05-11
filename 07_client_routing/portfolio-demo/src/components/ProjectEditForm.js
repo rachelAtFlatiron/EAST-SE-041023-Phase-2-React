@@ -25,8 +25,8 @@ function ProjectEditForm({ projectToEdit, editProject }) {
 		)
 	};
 
+	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ JSX
 	return (
-		// if projectToEdit HAS NO KEYS, hide form
 		<form onSubmit={handleSubmit} className="form" autoComplete="off" style={{display: Object.keys(projectToEdit).length === 0 ? "none" : "flex"}}>
 			<h3>Edit Project</h3>
 
