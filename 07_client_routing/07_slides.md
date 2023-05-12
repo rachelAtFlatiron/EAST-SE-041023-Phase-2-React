@@ -211,3 +211,9 @@ fetch(url)
 
 - Note: You may come across a `useNavigate` hook that replaces react router 5's `useHistory`...it is not reommended to use `useNavigate` for redirects involving fetches
 - `useNavigate` is meant to be used inside your component (i.e. the `jsx`) whereas `redirect` is meant to be used inside normal functions
+
+---
+
+## URL structure
+
+<img src="https://cdn.cognitiveseo.com/blog/wp-content/uploads/2019/11/url-structure-1024x538.jpg" widht="800px" />
