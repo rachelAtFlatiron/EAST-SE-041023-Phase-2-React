@@ -16,10 +16,10 @@ What URLs do we want our application to have to simulate the feeling of differen
 | --------------- | ------------------ |
 | Home            | / (root route)     |
 | About           | /about             |
-| CreateProjectForm     | /projects/new      |
-| EditProjectForm | /projects/:id/edit |
+| CreateProject     | /projects/new      |
+| EditProject | /projects/:id/edit |
 | ProjectDetail   | /projects/:id      |
-| ProjectList     | /projects          |
+| ProjectPage     | /projects          |
 
 🛑🛑🛑🛑🛑<strong>THESE ARE DIFFERENT THAN THE SERVER ROUTES</strong>🛑🛑🛑🛑🛑
 
