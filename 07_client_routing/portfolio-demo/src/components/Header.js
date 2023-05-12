@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 function Header({ updateDarkMode }) {
 	return (
@@ -8,15 +9,18 @@ function Header({ updateDarkMode }) {
 				Project Showcase
 			</h1>
 			<button onClick={updateDarkMode}>Dark Mode</button>
-			<button className="button" to={"/about"}>
+			<Link to={'/home'} className="button">
+				Home
+			</Link>
+			<Link className="button" to={"/about"}>
 				About
-			</button>
-			<button className="button" to={"/new"}>
+			</Link>
+			<Link className="button" to={"/new"}>
 				New Project
-			</button>
-			<button className="button" to={"/projects"}>
+			</Link>
+			<Link className="button" to={"/projects"}>
 				All Projects
-			</button>
+			</Link>
 		</header>
 	);
 }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaPencilAlt, FaTrash } from "react-icons/fa";
+import { Link } from 'react-router-dom' 
 
 function ProjectListItem({ project, editProject, updateProjectToEdit, deleteProject }) {
 	let { id, name, about, image, claps, link, phase } = project;
@@ -15,6 +16,8 @@ function ProjectListItem({ project, editProject, updateProjectToEdit, deleteProj
 		})
 		setProjectClaps((prevProjectClaps) => prevProjectClaps + 1);
 	};
+
+	
 
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~DELETE PROJECT
 	const handleDelete = () => {
@@ -36,7 +39,9 @@ function ProjectListItem({ project, editProject, updateProjectToEdit, deleteProj
 			</figure>
 			<section className="details">
 				{/* 7. create link to project details page */}
-				<h4>{name}</h4>
+				<Link to={`/projects/${id}`}>
+					<h4>{name}</h4>
+				</Link>
 				<p>{about}</p>
 				<p>
 					<a href={link}>Link</a>
@@ -47,9 +52,12 @@ function ProjectListItem({ project, editProject, updateProjectToEdit, deleteProj
 				<span className="badge blue">Phase {phase}</span>
 				<div className="manage">
 					{/* 8. make link to EditProject.js */}
-					<button onClick={() => updateProjectToEdit(project)}>
+					
+					{/* <button onClick={() => updateProjectToEdit(project)}> */}
+					<Link to={`/projects/${id}/edit`} >
 						<FaPencilAlt />
-					</button>
+					</Link>
+					{/* </button> */}
 					<button onClick={() => handleDelete()}>
 						<FaTrash />
 					</button>
