@@ -155,3 +155,5 @@ let projects = [
 		id: 33,
 	},
 ];
+
+export default projects
