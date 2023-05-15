@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Header from "./components/Header";
-import ProjectList from "./components/ProjectList";
-import ProjectForm from "./components/ProjectForm";
-import ProjectEditForm from './components/ProjectEditForm';
 //all pages to be used as routes
 import Home from './pages/Home'
 import About from './pages/About'
@@ -49,59 +46,11 @@ function App() {
     .then(data => setProjects(data))
   }
 
-  //Delete all following functions
-
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SET PROJECTOTEDIT TO PRE-POPULATE EDIT FORM
-  const updateProjectToEdit = (project) => {
-    setProjectToEdit(project)
-  }
-
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~SET DARK MODE
   const updateDarkMode = () => {
     setDarkMode(prevDarkMode => !prevDarkMode)
   }
 
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~PATCH REQUEST
-  const editProject = (fromProjectEditForm) => {
-
-    fetch(`http://localhost:4000/projects/${fromProjectEditForm.id}`, {
-			method: 'PATCH',
-			body: JSON.stringify({
-				...fromProjectEditForm,
-				phase: parseInt(fromProjectEditForm.phase),
-				claps: parseInt(fromProjectEditForm.claps)
-			}),
-			headers: {
-				'content-type': 'application/json'
-			}
-		})
-		.then(res => res.json())
-		.then(data => {
-			setProjects(
-        [...projects].map(el => {
-          return el.id === fromProjectEditForm.id ? fromProjectEditForm : el
-        })
-      )
-      setProjectToEdit({})
-		})
-   
-  }
-
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FOR POST REQUEST IN PROJECTFORM.JS
-  const addProject = (project) => {
-    setProjects([...projects, project])
-  }
-
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FOR DELETE REQUEST IN PROJECTLISTITEM.JS
-  const deleteProject = (project) => {
-    //remove project from projects state
-    setProjects(
-      [...projects].filter(el => 
-        project.id === el.id ? false : true
-      )
-    )
-  }
-  
   //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ JSX
   return (
     <div className={darkMode ? "App" : "App light"}>
@@ -111,7 +60,7 @@ function App() {
       <ProjectList projects={projects} updateProjectToEdit={updateProjectToEdit} editProject={editProject} deleteProject={deleteProject} /> */}
       {/* 3. create routes for all pages -> ProjectsPage.js */}
       <Routes>
-      <Route path="/projects/:id/edit" element={<EditProject editProject={editProject} />} />
+      <Route path="/projects/:id/edit" element={<EditProject />} />
 
         <Route path="/projects/:id" element={<ProjectDetails />} />
         <Route path="/home" element={<Home />} />

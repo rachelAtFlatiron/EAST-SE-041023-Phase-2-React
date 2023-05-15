@@ -15,13 +15,21 @@ function ProjectsPage() {
     .then(data => setProjects(data))
   }
 
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ FOR DELETE REQUEST IN PROJECTLISTITEM.JS
+    const deleteProject = (project) => {
+      //remove project from projects state
+      setProjects(
+        [...projects].filter(el => 
+          project.id === el.id ? false : true
+        )
+      )
+    }
+
+
   return (
     <div>
-      <ProjectList projects={projects} />
+      <ProjectList projects={projects} deleteProject={deleteProject} />
     </div>
-    //6. make ProjectListItem for each project -> ProjectListItem
-
-
   )
 }
 

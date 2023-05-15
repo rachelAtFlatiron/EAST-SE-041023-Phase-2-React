@@ -1,8 +1,6 @@
 import { useState } from 'react'
-import { redirect, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-
-//1. refactor so new project form is here
 function CreateProject() {
 
 	const navigate = useNavigate()
@@ -33,9 +31,8 @@ function CreateProject() {
 			},
 		})
 		.then((res) => res.json())
-		.then(() => {
-			setForm(formOutline);
-			navigate('/projects')
+		.then((data) => {
+			navigate(`/projects/${data.id}`) //on success navigate to individual project page
 		})
 		.catch(err => console.log(err))
 	};

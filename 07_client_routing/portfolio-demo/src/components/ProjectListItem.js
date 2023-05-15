@@ -1,41 +1,29 @@
 import { useState } from "react";
 import { FaPencilAlt, FaTrash } from "react-icons/fa";
-import { Link } from 'react-router-dom' 
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function ProjectListItem({ project, editProject, updateProjectToEdit, deleteProject }) {
+function ProjectListItem({ project, deleteProject }) {
 	let { id, name, about, image, claps, link, phase } = project;
-
-	const [projectClaps, setProjectClaps] = useState(claps);
-
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~PATCH REQUEST FOR CLAPS
-	//9. make PATCH request here
-	const handleClap = () => {
-		editProject({
-			...project,
-			claps: project.claps + 1
-		})
-		setProjectClaps((prevProjectClaps) => prevProjectClaps + 1);
-	};
-
-	
+	const navigate = useNavigate();
 
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~DELETE PROJECT
 	const handleDelete = () => {
 		fetch(`http://localhost:4000/projects/${project.id}`, {
-			method: 'DELETE'
+			method: "DELETE",
 		})
-		.then(res => res.json())
-		.then(() => deleteProject(project))
-	}
+			.then((res) => res.json())
+			.then(() => {
+				deleteProject(project);
+				navigate("/projects");
+			});
+	};
 
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ JSX
 	return (
 		<li className="card">
 			<figure className="image">
 				<img src={image} alt={name} />
-				<button onClick={handleClap} className="claps">
-					👏{projectClaps}
-				</button>
 			</figure>
 			<section className="details">
 				{/* 7. create link to project details page */}
@@ -52,9 +40,9 @@ function ProjectListItem({ project, editProject, updateProjectToEdit, deleteProj
 				<span className="badge blue">Phase {phase}</span>
 				<div className="manage">
 					{/* 8. make link to EditProject.js */}
-					
+
 					{/* <button onClick={() => updateProjectToEdit(project)}> */}
-					<Link to={`/projects/${id}/edit`} >
+					<Link to={`/projects/${id}/edit`}>
 						<FaPencilAlt />
 					</Link>
 					{/* </button> */}

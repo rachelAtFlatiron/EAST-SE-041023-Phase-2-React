@@ -1,13 +1,31 @@
 {
   "projects": [
     {
+      "id": 1,
+      "name": "Great Outdoors Guide",
+      "about": "Plan your next adventure to in the U.S. National Parks!",
+      "phase": 4,
+      "link": "https://great-outdoors-guide.netlify.app",
+      "image": "https://i.imgur.com/8GnP2Uw.png",
+      "claps": 17
+    },
+    {
       "id": 2,
       "name": "Book Her",
       "about": "The app takes you (the Casting Director) through a series of questions to determine the Models you need for your next Project.",
       "phase": 2,
       "link": "https://bookher.netlify.app/new_project",
       "image": "https://i.imgur.com/INs84Uk.png",
-      "claps": 9
+      "claps": 5
+    },
+    {
+      "id": 11,
+      "name": "Yourseum",
+      "about": "Find great art",
+      "phase": 4,
+      "link": "https://yourseum.netlify.app",
+      "image": "https://i.imgur.com/yywQCoi.png",
+      "claps": 0
     },
     {
       "id": 12,
@@ -31,7 +49,7 @@
       "id": 20,
       "name": "YouTravel",
       "about": "YouTube for Travel Videos",
-      "phase": 2,
+      "phase": 3,
       "link": "https://youtravel.netlify.app/",
       "image": "https://i.imgur.com/Y6mlORn.png",
       "claps": 0
@@ -116,42 +134,6 @@
       "image": "https://www.versionmuseum.com/images/websites/apple-website/apple-website%5E2017%5Ehomepage.png",
       "claps": 20,
       "id": 33
-    },
-    {
-      "name": "sdf",
-      "about": "sdf",
-      "link": "sdf",
-      "image": "sdf",
-      "phase": "3",
-      "claps": 0,
-      "id": 34
-    },
-    {
-      "name": "sdf",
-      "about": "sdf",
-      "link": "sdf",
-      "image": "sdf",
-      "phase": 2,
-      "claps": 0,
-      "id": 35
-    },
-    {
-      "name": "no add project",
-      "about": "sdf",
-      "link": "sdf",
-      "image": "sf",
-      "phase": 1,
-      "claps": 0,
-      "id": 36
-    },
-    {
-      "name": "redirect test",
-      "about": "testing",
-      "link": "none",
-      "image": "none",
-      "phase": 1,
-      "claps": 0,
-      "id": 37
     }
   ]
 }
