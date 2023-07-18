@@ -6,7 +6,11 @@ import projects from './projects'
 
 function App() {
   return (
-    // Deliverables 1a, 1b, 1c
+    //✅ 1. create child components
+    //✅ 1a. create a header component
+    //✅ 1b. create a project form component
+    //✅ 1c. create a project list component
+    //✅ 1d. provide an array of projects to the project list
     <div className="App">
       <Header />
       <ProjectForm />

@@ -1,9 +1,13 @@
+//✅ 3. define ProjectListItem
 import React from "react";
 
-// function ProjectListItem(props) {
+//✅ 3a. accept the props argument
+// 🛑 (props) vs ({ project })
 function ProjectListItem({ project }) {
-    /* deliverables 3 and 4*/
+    //✅ 3b. destructure the props object
 	let { name, about, image, claps, link, phase } = project; //props.project
+	
+	//✅ 3c. display info of project object
 	return (
 		<li className="card">
 			<figure className="image">

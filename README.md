@@ -34,9 +34,7 @@
 
 ##### 2a. Accepts the props provided to the component
 
-##### 2b. Destructures `projects` from the props object
-
-##### 2c. Displays each project title in an `li` element
+##### 2b. Displays each project title in an `li` element
 
 <br />
 
@@ -44,11 +42,9 @@
 
 ##### 3a. Accepts the props argument
 
-##### 3b. Destructure the props object and return `project`
+##### 3b. Destructure the properties of the `project` object
 
-##### 3c. Destructure the properties of the `project` object
-
-#####  3d. Displays the information of the `project` object
+##### 3c. Displays the information of the `project` object
 
 ```js
 <li className="card">
@@ -69,10 +65,6 @@
     </footer>
 </li>
 ```
-
-<br />
-
-#### 4. Dynamically render each project name inside the `h4` tag and the project about inside the `p` tag
 
 ***
 
